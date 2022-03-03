@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Dang Ky Hoc Vien</title>
+    <style type="text/css">
+        table{ border: solid 0px; background-color: yellow}
+        td {border: solid 0px}
+
+        .tieude { background-color: aqua}
+
+    </style>
+</head>
+<body>
+<div>
+    <table style="color: blue">
+        <thread>
+            <tr>
+                <th style="text-align: left" colspan="2" class="tieude"> DANG KY HOC VIEN</th>
+                <th>  </th>
+            </tr>
+        </thread>
+        <tbody>
+        <tr>
+            <td> Ho va ten </td>
+            <td style="width: 400px"> <input type="text" style="width: 200px ">
+            </td>
+        </tr>
+        <tr>
+            <td> Ngay sinh </td>
+            <td> <input type="text" style="width: 120px ">
+            </td>
+        </tr>
+        <tr>
+            <td> Gioi Tinh </td>
+            <td>
+                <input type="radio" name="gender"> Nam
+                <input type="radio" name="gender"> Nu
+            </td>
+        </tr>
+        <tr>
+            <td> Dia chi </td>
+            <td> <textarea style="width: 170px"> </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td> Lop </td>
+            <td>
+                <select name ="class" id="lop">
+                    <option value="Chon Lop">--Chon Lop--</option>
+                    <option value="Lop 1"> Lop 1 </option>
+                    <option value="Lop 2"> Lop 2 </option>
+                    <option value="Lop 3"> Lop 3 </option>
+                    <option value="Lop 4"> Lop 4 </option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> Email </td>
+            <td> <input type="text" name="email" value="" style="width: 150px ">
+            </td>
+        </tr>
+        <tr>
+            <td> Phone number </td>
+            <td> <input type="text" name="phone" value="" style="width: 150px ">
+            </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> <input type="submit" name="submit" value="Dang Ky"> <input type="reset" name="reset" value="Nhap Lai">
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

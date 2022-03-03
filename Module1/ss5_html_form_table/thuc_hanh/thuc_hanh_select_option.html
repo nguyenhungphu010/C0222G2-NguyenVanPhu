@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuc hanh HTML select option</title>
+</head>
+<body>
+<form method="get" action="simpleform.html">
+    <h2>Order Form</h2>
+    <p>what would you like to buy ?</p>
+
+    <!-- tao select option -->
+    <select>
+        <option value=" ">A</option>
+        <option>B(+0.5$)</option>
+        <option>C(+0.5$)</option>
+    </select>
+
+    <!-- tao radio button -->
+    <p> how much would you like to order? </p>
+    <input type="radio" name="rd"/> 1- 10$<br/>
+    <input type="radio" name="rd"/> 2- 20$<br/>
+    <input type="radio" name="rd"/> 3- 30$<br/>
+
+    <!-- tao textfield -->
+    <p>Name<span style ="color: red">*</span></p>
+    <input type="text" name="firstname" placeholder="Firstname" size="15"/>
+    <input type="text" name="lastname" placeholder="Lastname" size="15"/>
+    <p>Email</p>
+    <input type="text" name="Email" size="35"/>
+    <p>Phone Number</p>
+    <input type="text" name="phone 1" size="5"/> -
+    <input type="text" name="phone 2" size="5"/> -
+    <input type="text" name="phone 3" size="5"/>
+
+    <!-- tao button -->
+    <p><input type="button" name="Submit" value="Submit"/> </p>
+
+    <!-- tao style va font ap dung cho toan bo form-->
+    <style>
+        .wufoo {font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;}
+    </style>
+
+    <!-- su dung form vua tao -->
+    <form method="get" action="simpleform.html" class = "wufoo">
+
+
+</form>
+</body>
+</html>
