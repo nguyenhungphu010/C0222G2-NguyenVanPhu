@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai Tap Tao Form Don Gian</title>
+    <style>
+        table{border: aqua solid 10px;}
+        .tieude{color: white}
+        .infor{color: blue}
+        .cb{color: coral}
+        /* check the table's cells with borders */
+        td{border: solid 0px}
+    </style>
+</head>
+<body>
+<div>
+    <form action="" method="get">
+    <table>
+        <thread>
+            <tr>
+                <th colspan="4" style="background-color: red" class ="tieude">YOUR HOBBIES</th>
+            </tr>
+        </thread>
+        <tbody>
+        <!-- 2nd row-->
+        <tr>
+            <td  class="infor">Name</td>
+            <td colspan="2">
+                <input type="text" name="Name">
+            </td>
+            <td> </td>
+        </tr>
+        <!-- 3rd row-->
+        <tr>
+            <td  class="infor">Email</td>
+            <td colspan="2">
+                <input type="text" name="Email" style="width: 130px">
+            </td>
+            <td> </td>
+        </tr>
+        <!-- 4th row-->
+        <tr>
+            <td class="infor">Hobbies</td>
+            <td class="cb">
+                <input type="checkbox" name="Sport"> Sport
+            </td>
+            <td class="cb">
+                <input type="checkbox" name="Music"> Music
+            </td>
+            <td class="cb">
+                <input type="checkbox" name="Reading"> Reading
+            </td>
+        </tr>
+        <!-- 5th row-->
+        <tr>
+            <td> </td>
+            <td class="cb">
+                <input type="checkbox" name="Web"> Web Surfing
+            </td>
+            <td class="cb">
+                <input type="checkbox" name="Game"> Game
+            </td>
+            <td class="cb">
+                <input type="checkbox" name="Movies"> Movies
+            </td>
+
+        </tr>
+        <!-- 6th row-->
+        <tr>
+            <td> </td>
+            <td class="cb">
+                <input type="checkbox" name="Travelling"> Travelling
+            </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <!-- 7th row-->
+        <tr>
+            <td> </td>
+            <td colspan="2">
+                <button type="submit" name="Submit" value="Submit"> Submit </button>
+                <button type="reset" name="Reset" value="Reset"> Reset </button>
+            </td>
+            <td> </td>
+        </tr>
+        </tbody>
+    </table>
+    </form>
+</div>
+</body>
+</html>
