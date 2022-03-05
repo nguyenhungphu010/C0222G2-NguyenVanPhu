@@ -11,10 +11,12 @@
         }
         table{
             font-family: Cambria;
-            border: solid 0px;
+            /*border: solid 0px;*/
             font-size: 15px;
+            border-collapse: collapse;
         }
         td,th {
+            border-collapse: collapse;
             border: 1px solid;
         }
         .in4_left{
@@ -29,7 +31,7 @@
         }
         .head1{
             background-color: yellow;
-            width: 200px;
+            width: 120px;
         }
         .head2{
             background-color: coral;
@@ -43,19 +45,17 @@
 <!--    row 1-->
     <tr>
         <td colspan="3" class="in4_left"> Lop: T09081 </td>
-        <td style="border-style: none"> </td>
-        <td colspan="2" class="in4_right"> Thoi gian hoc: 13h30 - 17h30</td>
+        <td colspan="3" class="in4_right"> Thoi gian hoc: 13h30 - 17h30</td>
     </tr>
     <!--    row 2-->
     <tr>
         <td colspan="3" class="in4_left"> Giao Vien: KhoaNV </td>
-        <td> </td>
-        <td colspan="2" class="in4_right"> Ngay Hoc: Thu 3, 5, 7</td>
+        <td colspan="3" class="in4_right"> Ngay Hoc: Thu 3, 5, 7</td>
     </tr>
     <!--    row 3-->
     <tr>
         <td colspan="3" class="in4_left"> Phong Hoc: Class3/Lab3 </td>
-        <td colspan="3"> </td>
+        <td colspan="3" class="in4_right"> </td>
     </tr>
     <!--    row 4-->
     <tr>
@@ -67,8 +67,8 @@
     <!--    row 5-->
     <tr class="head2">
         <th style="width: 100px">Tuan</th>
-        <th style="width: 200px">Ngay bat dau</th>
-        <th style="width: 200px">Ngay ket thuc</th>
+        <th style="width: 100px">Ngay bat dau</th>
+        <th style="width: 100px">Ngay ket thuc</th>
         <th colspan="3"> Mon Hoc</th>
     </tr>
     <!--    row 6-->
