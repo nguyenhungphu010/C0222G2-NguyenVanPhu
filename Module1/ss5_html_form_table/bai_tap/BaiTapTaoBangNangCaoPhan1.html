@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Build a Chess Table</title>
+    <style>
+        table{
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+        th,td {
+            border-style: none;
+        }
+        th{
+            background-color: orange;
+        }
+        .black{
+            background-color: black;
+        }
+        .white{
+            background-color: white;
+        }
+        .white,.black {
+            table-layout: fixed;
+            height: 40px;
+            width: 40px;
+        }
+        .nums{
+            table-layout: fixed;
+            height: 30px;
+            background-color: orange;
+        }
+        .bd{
+            background-color: orange;
+        }
+
+    </style>
+</head>
+
+<body>
+<table>
+    <!-- row 1 -->
+    <tr class="nums">
+        <th style="width: 30px"> </th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th style="width: 10px"; rowspan="10" class="bd"></th>
+    </tr>
+<!--    row 2-->
+    <tr>
+        <th>A</th>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+    </tr>
+    <!--    row 3-->
+    <tr>
+        <th>B</th>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+    </tr>
+<!--    row 4-->
+    <tr>
+        <th>C</th>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+    </tr>
+    <!--    row 5-->
+    <tr>
+        <th>D</th>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+    </tr>
+    <!--    row 6-->
+    <tr>
+        <th>E</th>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+    </tr>
+    <!--    row 7-->
+    <tr>
+        <th>F</th>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+    </tr>
+    <!--    row 8-->
+    <tr>
+        <th>G</th>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+    </tr>
+    <!--    row 9-->
+    <tr>
+        <th>H</th>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+        <td class="black"> </td>
+        <td class="white"> </td>
+    </tr>
+    <!--    row 10-->
+    <tr>
+        <td style="height: 10px" colspan="10" class="bd"> </td>
+    </tr>
+
+</table>
+</body>
+</html>
