@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuc Hanh Toan Tu 3 Ngoi</title>
+</head>
+<form>
+    <p>Nhap gia tri a</p>
+    <input type="number" id="anum" style="width: 60px">
+    <p>Nhap gia tri b</p>
+    <input type="number" id="bnum" style="width: 60px"><br/>
+    <button type="button" onclick="check4()">Addition(+)</button>
+    <p id="c"></p>
+</form>
+<body>
+<script>
+    function check4() {
+
+        let a,b,d,result;
+        a = Number(document.getElementById("anum").value);
+        b = Number(document.getElementById("bnum").value);
+        d = a+b;
+        if(d<4){
+            result = "below";
+        } else {
+            result = "over";
+        }
+        document.getElementById("c").innerText = result;
+    }
+</script>
+</body>
+</html>

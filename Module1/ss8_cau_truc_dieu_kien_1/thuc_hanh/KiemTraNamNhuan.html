@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem Tra Nam Nhuan</title>
+</head>
+<body>
+<form>
+    <p> xin moi nhap so nam </p>
+    <input type="number" id="year">
+    <br><br/>
+    <button type="button" onclick="check()">Kiem Tra</button>
+</form>
+
+<script>
+    function check() {
+        let a;
+        a = Number(document.getElementById("year").value)
+        if(a%4==0){
+            if(a%100==0){
+                alert(" day la nam nhuan");
+            } else{
+
+            }alert(" day la nam nhuan");
+        } else{
+            alert("day khong phai nam nhuan");
+        }
+    }
+</script>
+
+</body>
+</html>

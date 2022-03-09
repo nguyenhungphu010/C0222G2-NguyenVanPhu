@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch Case practice</title>
+</head>
+<body>
+<form>
+    <p>Input your browser</p>
+    <input type="text" id="br" style="width: 80px">
+    <button type="button" onclick="check()" >Submit</button>
+
+</form>
+<script>
+    function check(){
+        let browser;
+        browser = document.getElementById("br").value;
+        if (browser == 'Edge') {
+            alert("You've got the Edge!");
+        } else if (browser == 'Chrome' || browser == 'Firefox' || browser == 'Safari' || browser == 'Opera') {
+            alert('Okay we support these browsers too');
+        } else {
+            alert('We hope that this page looks ok!');
+        }
+    }
+
+</script>
+</body>
+</html>

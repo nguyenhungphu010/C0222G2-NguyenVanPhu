@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Re-write with Switch Case Structure</title>
+</head>
+<body>
+<form>
+    <p> Please input number</p>
+    <input type="number" id="num" style="width: 100px">
+    <button type="button" onclick="check()">Check me</button>
+</form>
+<script>
+    function check() {
+        let a;
+        a = document.getElementById("num").value;
+        switch (a) {
+            case "0":
+                alert(0);
+                break;
+            case "1":
+                alert(1);
+                break;
+            case '2':
+                case "3":
+                    alert('2,3');
+                    break;
+            default:
+                alert("fucking shit ")
+        }
+    }
+</script>
+</body>
+</html>

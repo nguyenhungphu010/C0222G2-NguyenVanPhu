@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch Case</title>
+</head>
+<body>
+<form>
+    <p>Input your browser</p>
+    <input type="text" id="br" style="width: 80px">
+    <button type="button" onclick="check()" >Submit</button>
+</form>
+<script>
+    function check() {
+        let browser;
+        browser = document.getElementById("br").value;
+        switch (browser) {
+            case "Edge":
+                alert("You've got the Edge!");
+                break;
+            case 'Chrome':
+            case 'Firefox':
+            case 'Safari':
+            case 'Opera':
+                alert('Okay we support these browsers too');
+                break;
+            default:
+                alert('We hope that this page looks ok!');
+        }
+    }
+</script>
+</body>
+</html>
