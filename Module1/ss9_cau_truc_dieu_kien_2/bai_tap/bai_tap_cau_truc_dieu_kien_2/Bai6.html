@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Dien Tich Tam Gia Vuong</title>
+</head>
+<body>
+<h3> Gia phuong trinh bac 1</h3>
+<p>Phuong trinh bac 1 co dang <strong>ax+b=c</strong> </p>
+<p>gia tri a</p>
+<input type="number" id="a" value="0">
+<p>gia tri b</p>
+<input type="number" id="b" value="0">
+<p>gia tri c</p>
+<input type="number" id="c" value="0">
+<br/>
+<button type="button" onclick="check()">Calculate</button>
+<p id="ketqua">gia tri cua x:</p>
+<script>
+    function check(){
+        let a, b,c,d;
+        a = parseFloat(document.getElementById("a").value);
+        b = parseFloat(document.getElementById("b").value);
+        c = parseFloat(document.getElementById("c").value);
+        d = (c-b)/a;
+        document.getElementById("ketqua").innerText=d;
+    }
+</script>
+</body>
+</html>

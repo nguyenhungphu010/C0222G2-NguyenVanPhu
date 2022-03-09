@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinh chi so can nang co the</title>
+</head>
+<p>Input the height</p>
+<input type="number" id="height" style="width: 40px">
+<p>Input the weigh</p>
+<input type="number" id="weigh" style="width: 40px">
+<button type="button" onclick="check()">Check BMI</button>
+<p id ="rate"></p>
+<body>
+<script>
+    function check() {
+        let a,b,bmi, result;
+        a = document.getElementById("height").value;
+        b = document.getElementById("weigh").value;
+        bmi = b/(a*a);
+        if (bmi<18.5){
+            result = "Underweight";
+        }else if (bmi<25){
+            result = "Normal";
+        }else if (bmi<30){
+            result = "Overweigh";
+        }else {
+            result = "Obese";
+        }
+        document.getElementById("rate").innerText = result;
+    }
+</script>
+</body>
+</html>

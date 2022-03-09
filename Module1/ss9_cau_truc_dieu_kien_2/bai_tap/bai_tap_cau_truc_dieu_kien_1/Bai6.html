@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Tien Hoa Hong</title>
+    <style>
+        table{
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: solid 1px;
+        }
+        .rate{
+            text-align: center;
+        }
+        th{
+            background-color: chocolate;
+        }
+    </style>
+</head>
+<body>
+<h1> Chinh sach Hoa Hong cua cong ty</h1>
+<table>
+    <tr>
+        <th style="width: 250px">Doanh So (vnd)</th>
+        <th>Ti Le Hoa Hong</th>
+    </tr>
+    <tr>
+        <td>duoi 1,000,000</td>
+        <td class="rate">0%</td>
+    </tr>
+    <tr>
+        <td>tu 1,000,000 den 5,000,000</td>
+        <td class="rate">1%</td>
+    </tr>
+    <tr>
+        <td>tu 5,000,000 den 10,000,000</td>
+        <td class="rate">2%</td>
+    </tr>
+    <tr>
+        <td>tu 10,000,000 den 15,000,000</td>
+        <td class="rate">3%</td>
+    </tr>
+    <tr>
+        <td>tu 15,000,000 den 20,000,000</td>
+        <td class="rate">4%</td>
+    </tr>
+    <tr>
+        <td>tu 20,000,000 tro len</td>
+        <td class="rate">5%</td>
+    </tr>
+</table>
+<p>Nhap Doanh Thu</p>
+<input type="number" id="revenue">
+<button type="button" onclick="check()">Calculate</button>
+<p>Tien Hoa Hong</p>
+<input type="text" id="hh">
+<script>
+    function check() {
+        let a, result;
+        a = parseFloat(document.getElementById("revenue").value);
+        if(1000000 <= a && a < 5000000){
+            result = 0.01 * a;
+        } else if (5000000<= a && a <10000000){
+            result = 0.02 * a;
+        }else if (10000000<= a && a <15000000){
+            result = 0.03 * a;
+        }else if (15000000<= a && a <20000000){
+            result = 0.04 * a;
+        }else if (20000000<= a){
+            result = 0.05 * a;
+        }else{
+            result = 0;
+        }
+        document.getElementById("hh").value = result;
+        }
+</script>
+</body>
+</html>

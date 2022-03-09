@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chương trình tính giá điện.</title>
+    <style>
+        table{
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: solid 1px;
+        }
+        .rate{
+            text-align: center;
+        }
+        th{
+            background-color: chocolate;
+        }
+    </style>
+</head>
+<body>
+<h1>BẢNG GIÁ ĐIỆN NHÀ NƯỚC HIỆN NAY</h1>
+<table>
+    <tr>
+        <th>Bậc tính giá</th>
+        <th style="width: 200px">Dinh Muc Tieu Thu</th>
+        <th>Gia Dien (vnd)/kWh</th>
+    </tr>
+    <tr>
+        <td>Bac 1</td>
+        <td>(0 - 50kWh)</td>
+        <td class="rate">1.678 đồng</td>
+    </tr>
+    <tr>
+        <td>Bac 2</td>
+        <td>(51 - 100kWh)</td>
+        <td class="rate">1.734 đồng</td>
+    </tr>
+    <tr>
+        <td>Bac 3</td>
+        <td>(101 - 200kWh)</td>
+        <td class="rate">2.014 đồng</td>
+    </tr>
+    <tr>
+        <td>Bac 4</td>
+        <td>(201 - 300kWh)</td>
+        <td class="rate">2.536 đồng</td>
+    </tr>
+    <tr>
+        <td>Bac 5</td>
+        <td>(301- 400kWh) </td>
+        <td class="rate">2.834 đồng</td>
+    </tr>
+    <tr>
+        <td>Bac 6</td>
+        <td>(401kWh trở lên)</td>
+        <td class="rate">2.927 đồng</td>
+    </tr>
+</table>
+<p> Nhap so dien su dung (kWh)</p>
+<input type=number id="num"style="width: 100px" value="0">
+<button type="button" onclick="check()">Calculate</button>
+<p>Tien Dien</p>
+<input type="text" id="tiendien">
+
+<script>
+    function check() {
+        let a;
+        let b;
+        a = parseFloat(document.getElementById("num").value);
+        // bac 1
+        if (a>=0 && a<=50){
+            b = 1678*a;
+        //    bac 2
+        }else if(51<=a && a<=100) {
+            b = 1734 * a;
+        //    bac 3
+        } else if(101<=a && a<=200) {
+            b = 2014 * a;
+        //    bac 4
+        }else if(201<=a && a<=300) {
+            b = 2536 * a;
+        //     bac 5
+        }else if (301<=a && a<=400){
+            b = 2824 *a ;
+        //    bac 6
+        }else if (a > 401){
+            b = 2927*a;
+        }else{
+            alert("vui long nhap lai so dien")
+        }
+        document.getElementById("tiendien").value=b;
+    }
+</script>
+</body>
+</html>

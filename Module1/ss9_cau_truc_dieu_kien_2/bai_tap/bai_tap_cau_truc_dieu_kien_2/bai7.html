@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giai Phuong Trinh Bac 2</title>
+</head>
+<body>
+<h3> Gia phuong trinh bac 2</h3>
+<p>Phuong trinh bac 1 co dang <strong>ax<sup>2</sup>+bx+c=0</strong> </p>
+<p>gia tri a</p>
+<input type="number" id="a" value="0">
+<p>gia tri b</p>
+<input type="number" id="b" value="0">
+<p>gia tri c</p>
+<input type="number" id="c" value="0">
+<br/>
+<button type="button" onclick="check()">Calculate</button>
+<p>ket qua x1</p>
+<input type="text" id="ketqua1" style="width: 80px">
+<p>ket qua x2</p>
+<input type="text" id="ketqua2" style="width: 80px">
+<script>
+    function check(){
+        let a, b,c,delta;
+        let x1,x2;
+        a = parseFloat(document.getElementById("a").value);
+        b = parseFloat(document.getElementById("b").value);
+        c = parseFloat(document.getElementById("c").value);
+        delta = (b*b)-4*a*c;
+        if (delta<0){
+            document.write("phuong trinh vo nghiem");
+        }else if (delta==0){
+            x1= -(b/a*2);
+            x2= -(b/a*2);
+        }else if (delta>0){
+            x1=((-b)+ Math.sqrt(delta))/(2*a);
+            x2=((-b)- Math.sqrt(delta))/(2*a);
+        }
+        document.getElementById("ketqua1").value=x1;
+        document.getElementById("ketqua2").value=x2;
+    }
+</script>
+</body>
+</html>

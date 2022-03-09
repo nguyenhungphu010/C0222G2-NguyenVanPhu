@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal taxes Calculator</title>
+    <style>
+        table{
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: solid 1px;
+        }
+        .rate{
+            text-align: center;
+        }
+        th{
+            background-color: chocolate;
+        }
+    </style>
+</head>
+<body>
+<h1>TABLE OF TOTAL INCOME TAXES </h1>
+<table>
+    <tr>
+        <th>Tax level</th>
+        <th style="width: 200px">Total Income per Month (million vnd)</th>
+        <th>Tax Rate</th>
+    </tr>
+    <tr>
+        <td>Level 1</td>
+        <td>(0 - 5)</td>
+        <td class="rate">5%</td>
+    </tr>
+    <tr>
+        <td>Level 2</td>
+        <td>(5 - 10)</td>
+        <td class="rate">10%</td>
+    </tr>
+    <tr>
+        <td>Level 3</td>
+        <td>(10 - 18)</td>
+        <td class="rate">15%</td>
+    </tr>
+    <tr>
+        <td>Level 4</td>
+        <td>(18 - 32)</td>
+        <td class="rate">20%</td>
+    </tr>
+    <tr>
+        <td>Level 5</td>
+        <td>(32- 52) </td>
+        <td class="rate">25%</td>
+    </tr>
+    <tr>
+        <td>Level 6</td>
+        <td>(52- 80)</td>
+        <td class="rate">30%</td>
+    </tr>
+    <tr>
+        <td>Level 7</td>
+        <td>(above 80)</td>
+        <td class="rate">35%</td>
+    </tr>
+</table>
+
+<p>Input the monthly total Income</p>
+<input type=number id="income" style="width: 100px" value="0">
+<button type="button" onclick="check()">Calculate</button>
+<p>Income After taxes</p>
+<input type="number" id="netincome">
+
+<script>
+    function check() {
+        let a;
+        let b;
+        a = parseFloat(document.getElementById("income").value);
+        alert("GIA TRI"+a);
+        switch (a) {
+            case 1:
+                if (0<=a && a<5){
+                    b = a*0.005;
+                }
+                break;
+            case 2:
+                if (5<=a && a<10){
+                    b = a*0.1;
+                }
+                break;
+            case 3:
+                if (10<=a && a<18){
+                    b = a*0.15;
+                }
+                break;
+            case 4:
+                if (18<=a && a<32){
+                    b = a*0.2;
+                }
+                break;
+            case 5:
+                if (32<=a && a<52){
+                    b = a*0.25;
+                }
+                break;
+            case 6:
+                if (52<=a && a<=80){
+                    b = a*0.3;
+                }
+                break;
+            case 7:
+                if (a>80){
+                    b = a*0.35;
+                }
+                break;
+            default:
+                alert("please input the right income")
+        }
+        document.getElementById("netincome").value=b;
+    }
+</script>
+</body>
+</html>
