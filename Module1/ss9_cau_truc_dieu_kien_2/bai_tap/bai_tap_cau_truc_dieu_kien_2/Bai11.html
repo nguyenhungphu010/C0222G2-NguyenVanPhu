@@ -68,55 +68,36 @@
 <input type=number id="income" style="width: 100px" value="0">
 <button type="button" onclick="check()">Calculate</button>
 <p>Income After taxes</p>
-<input type="number" id="netincome">
+<input type="number" id="net" value=" ">
 
 <script>
     function check() {
         let a;
         let b;
-        a = parseFloat(document.getElementById("income").value);
-        alert("GIA TRI"+a);
-        switch (a) {
-            case 1:
-                if (0<=a && a<5){
-                    b = a*0.005;
-                }
-                break;
-            case 2:
-                if (5<=a && a<10){
-                    b = a*0.1;
-                }
-                break;
-            case 3:
-                if (10<=a && a<18){
-                    b = a*0.15;
-                }
-                break;
-            case 4:
-                if (18<=a && a<32){
-                    b = a*0.2;
-                }
-                break;
-            case 5:
-                if (32<=a && a<52){
-                    b = a*0.25;
-                }
-                break;
-            case 6:
-                if (52<=a && a<=80){
-                    b = a*0.3;
-                }
-                break;
-            case 7:
-                if (a>80){
-                    b = a*0.35;
-                }
-                break;
-            default:
-                alert("please input the right income")
+        let c;
+        a = Number(document.getElementById("income").value);
+        if (0<=a && a<5 ){
+            b = a*0.005;
+        }else if (5<=a && a<10){
+            b = a*0.1;
+        }else if(10<=a && a<18){
+            b = a*0.15;
+        }else if(18<=a && a<32){
+            b = a*0.2;
+        }else if(32<=a && a<52){
+            b = a*0.25;
+        }else if(52<=a && a<=80){
+            b = a*0.3;
+        }else if(a>80){
+            b = a*0.35;
+        }else{
+            alert("please input the right income")
         }
-        document.getElementById("netincome").value=b;
+        c = a -b;
+        document.getElementById("net").value=c;
     }
 </script>
+
+
 </body>
 </html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Lai Ngan Hang</title>
+    <style>
+        table{
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: solid 1px;
+        }
+        .rate{
+            text-align: center;
+            width: 50px;
+        }
+        th{
+            background-color: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+<h1>BẢNG LÃI XUẤT TIẾT KIỆM</h1>
+<table>
+    <tr>
+        <th rowspan="2">kỲ hẠn</th>
+        <th rowspan="2" style="width: 200px">Trả lãi trước</th>
+        <th colspan="3">Tiền gửi </th>
+    </tr>
+    <tr>
+        <td class="rate"><1 tỷ</td>
+        <td class="rate">1-3 tỷ</td>
+        <td class="rate">>= 3 tỷ</td>
+    </tr>
+    <tr>
+        <td>1M</td>
+        <td>4.8</td>
+        <td class="rate">4.9</td>
+        <td class="rate">5.0</td>
+        <td class="rate">5.1</td>
+    </tr>
+    <tr>
+        <td>2M</td>
+        <td>4.8</td>
+        <td class="rate">4.9</td>
+        <td class="rate">5.0</td>
+        <td class="rate">5.1</td>
+    </tr>
+    <tr>
+        <td>3M</td>
+        <td>4.8</td>
+        <td class="rate">5.0</td>
+        <td class="rate">5.1</td>
+        <td class="rate">5.2</td>
+    </tr>
+    <tr>
+        <td>4M</td>
+        <td>4.8</td>
+        <td class="rate">5.0</td>
+        <td class="rate">5.1</td>
+        <td class="rate">5.2</td>
+    </tr>
+    <tr>
+        <td>5M</td>
+        <td>4.8</td>
+        <td class="rate">5.0</td>
+        <td class="rate">5.1</td>
+        <td class="rate">5.2</td>
+    </tr>
+    <tr>
+        <td>6M</td>
+        <td>5.9</td>
+        <td class="rate">6.2</td>
+        <td class="rate">6.3</td>
+        <td class="rate">6.4</td>
+    </tr>
+    <tr>
+        <td>> 6M</td>
+        <td>5.9</td>
+        <td class="rate">6.0</td>
+        <td class="rate">6.1</td>
+        <td class="rate">6.0</td>
+    </tr>
+</table>
+<p> Nhap tien ban dau</p>
+<input type=number id="num"style="width: 100px" value="0">
+<p> Ky Han Tien Gui</p>
+<input type=number id="kyhan"style="width: 100px" value="0">
+<button type="button" onclick="check()">Calculate</button>
+<p>Tien lai sau ky han</p>
+<input type="text" id="total">
+
+<script>
+    function check() {
+        let a;
+        let b;
+        let c;
+        let d;
+        a = parseFloat(document.getElementById("kyhan").value);
+        b = parseFloat(document.getElementById("num").value);
+        // bac 1
+        if (a == 1){
+            if(b<1000000000){
+                c = 0.049*b;
+            }else if (1000000000<= b && b <= 3000000000){
+                c = 0.05*b;
+            }else if (3000000000<= b ){
+                c = 0.051*b;
+            }
+            //    bac 2
+        }else if(a==2){
+            if(b<1000000000){
+                c = 0.049*b;
+            }else if (1000000000<= b && b <= 3000000000){
+                c = 0.05*b;
+            }else if (3000000000<= b ){
+                c = 0.051*b;
+            }
+            //    bac 3
+        }else if(a==3){
+            if(b<1000000000){
+                c = 0.05*b;
+            }else if (1000000000<= b && b <= 3000000000){
+                c = 0.051*b;
+            }else if (3000000000<= b ){
+                c = 0.052*b;
+            }
+            //    bac 4
+        }else if(a==4){
+            if(b<1000000000){
+                c = 0.05*b;
+            }else if (1000000000<= b && b <= 3000000000){
+                c = 0.051*b;
+            }else if (3000000000<= b ){
+                c = 0.052*b;
+            }
+            //    bac 5
+        }else if(a==5){
+            if(b<1000000000){
+                c = 0.05*b;
+            }else if (1000000000<= b && b <= 3000000000){
+                c = 0.051*b;
+            }else if (3000000000<= b ){
+                c = 0.052*b;
+            }
+            //    bac 5
+        }else if(a==6){
+            if(b<1000000000){
+                c = 0.062*b;
+            }else if (1000000000<= b && b <= 3000000000){
+                c = 0.063*b;
+            }else if (3000000000<= b ){
+                c = 0.06*b;
+            }
+            //    bac 6
+        }else {
+            if(b<1000000000){
+                c = 0.06*b;
+            }else if (1000000000<= b && b <= 3000000000){
+                c = 0.061*b;
+            }else if (3000000000<= b ){
+                c = 0.06*b;
+            }
+        }
+        d = b +c;
+        document.getElementById("total").value=d;
+    }
+</script>
+</body>
+</html>
