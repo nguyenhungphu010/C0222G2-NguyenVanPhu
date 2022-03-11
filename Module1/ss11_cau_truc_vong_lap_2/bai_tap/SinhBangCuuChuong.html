@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Muitiplicaition Table</title>
+    <style>
+        .mtable{
+
+        }
+    </style>
+</head>
+<body>
+<!--<p>Input number of times table</p>-->
+<!--<input type="number" id="num" value="1">-->
+<button type="button" onclick="check()">Show</button>
+<div id="result"></div>
+<script>
+    function check(){
+        // goi cac bien i va result cua bang
+        let i;
+        let table;
+        // mở Bảng
+        table = '<table style="width: 500px" border="1">';
+        for (i =1;i<=10;i++){
+            // tao hang cho vong lap
+            table += '<tr>'
+            for (j=1;j<=10;j++){
+                // tao o data cho vong lap
+                table += '<td>' +j+ '*' +i+ '=' +i*j+ '</td>'
+            }
+            table += '</tr>'
+        }
+        // Đóng Bảng
+        table += '</table>';
+        document.getElementById("result").innerHTML = table;
+
+        }
+
+</script>
+</body>
+</html>
