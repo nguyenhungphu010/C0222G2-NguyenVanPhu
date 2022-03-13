@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Display 20 fibonacci number</title>
+    <title>Title</title>
 </head>
 <body>
 <script>
@@ -12,10 +12,13 @@
     let num = parseInt(prompt("Input the limit of the Fibonacy series: "));
     document.write("Fibonacy series: ");
     for (let i=1; i<=num;i++){
-        document.write(' '+n1);
+        // document.write(' '+n1);
         net_num = n1+n2;
         n1 = n2;
         n2 = net_num;
+        if (n1%5 ===0){
+            document.write(' '+n1);
+        }
     }
 </script>
 </body>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_7 _2</title>
+</head>
+<body>
+<script>
+    let num;
+    let b = [0];
+    // let a = 'Fizz'
+    // let a = 'Fizz'
+    let i = 1;
+    num = Number(prompt('input he limit: '))
+    for (b.length= 1; b.length <=num; i++) {
+        b.push(i);
+        for (let m = 0; m<=b.length ; m++){
+            if (b[m]%5 ===0 && b[m]%3 ===0 ){
+                b[m] = 'FizzBuzz';
+            }
+        }
+        for (let j = 0; j<=b.length ; j++){
+            if (b[j]%3 ===0 ){
+                b[j] = 'Fizz';
+            }
+        }
+        for (let k = 0; k<=b.length ; k++){
+            if (b[k]%5 ===0 ){
+                b[k] = 'Buzz';
+            }
+        }
+
+    }
+    console.log(b)
+</script>
+</body>
+</html>
