@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim Gia Tri Lon Nhat Trong Mang</title>
+</head>
+<body>
+<script>
+    let number = [-3, 5, 1, 3, 2, 10];
+    // khai bao bien max de luu gia tri lon nhat mac dinh la gia tri dau tien.
+    let max = number [0];
+    let index = 0;
+    for (let i =1; i <number.length ; i ++){
+        if (number[i] > max){
+            max = number[i];
+            index = i;
+        }
+    }alert("max: " + max + " at position " + index);
+</script>
+</body>
+</html>

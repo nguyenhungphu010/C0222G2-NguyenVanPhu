@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In tam Giac Vuong</title>
+</head>
+<body>
+<script>
+    let a = '*';
+    // let b ='';
+    // tao chieu cao
+    let b = '&nbsp;&nbsp;'
+    for (let i = 1; i<=5;i++){
+        // tao hang
+        for (let j = 1;j <=i; j++){
+            document.write(a)
+        }
+        document.write('<br>')
+    }
+    document.write('<br>')
+    for (let i = 1; i<=5;i++){
+        // tao hang
+        for (let j =5;j>=i; j--){
+            document.write(a)
+        }
+        document.write('<br>')
+    }
+    document.write('<br>')
+    for (let i = 1; i<=5;i++) {
+        for (let j = 5; j >= i; j--) {
+            document.write(b)
+        }
+        for (let j = 1;j <=i; j++){
+            document.write(a)
+        }
+        document.write('<br>')
+    }
+    document.write('<br>')
+    for (let i = 1; i<=5;i++) {
+        for (let j = 1;j <=i; j++){
+            document.write(b)
+        }for (let j =5;j>=i; j--){
+            document.write(a)
+        }
+        document.write('<br>')
+    }
+</script>
+</body>
+</html>

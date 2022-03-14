@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In Day Fibonacy</title>
+</head>
+<body>
+<script>
+    let n1 = 0;
+    let n2 = 1;
+    let n3;
+    let sum = '0'
+    let n = Number(prompt(" nhap day so Fibonacy"))
+    for (let i=0;i <=n;i++){
+        n3 = n1+n2;
+        n1 = n2;
+        n2 = n3;
+        sum+=' '+n1;
+    }document.write(sum)
+</script>
+</body>
+</html>

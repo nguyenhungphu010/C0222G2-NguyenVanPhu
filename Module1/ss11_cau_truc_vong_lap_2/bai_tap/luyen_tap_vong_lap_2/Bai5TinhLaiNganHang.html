@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Lai Ngan Hang</title>
+</head>
+
+<body>
+<script>
+    let a;
+    let interest ;
+    a = Number(prompt("nhap so tien gui ban dau, Lãi 6% / Tháng : "));
+    b = Number(prompt("nhap so thang gui  : "));
+    let c = 0;
+    let rate = 0.06;
+    for (let i = 1; i <= b; i ++){
+        interest = a * rate;
+        a = a + interest ;
+    }
+    alert("tong so tien sau ky han la : " +a+ " vnd" );
+</script>
+</body>
+</html>
