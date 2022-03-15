@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="start()">Đoán</button>
+<button onclick="start()">Đoán Lại</button>
+
+
+<script>
+    function start() {
+        alert('Nhập Khoảng số ')
+        let n1 = parseInt(prompt('Nhập số đầu'))
+        let n2 = parseInt(prompt('Nhập số sau'))
+        let numberMax ='';
+        let numberMin ='';
+        if(n1>n2){
+            numberMax=n1;
+            numberMin=n2;
+        }else{
+            numberMax=n2;
+            numberMin=n1;
+        }
+        while(numberMax>numberMin){
+            let n = 1;
+            let random = Math.floor(Math.random()*numberMax);
+            while(random>numberMin && random<numberMax){
+                let guess = parseInt(prompt('Nhập số Bạn Đoán'));
+                if(guess===random) {
+                    alert('đoán đúng!')
+                    break;
+                }else {
+                    alert('đoán sai ')
+                    ++n;
+                    if(n===3){
+                        break;
+                    }
+                    continue;
+                }
+                ++n;
+
+                if(n===3){
+                    break;
+                }
+            }
+            alert('Chơi Lại');
+            start();
+        }
+
+
+    }
+
+</script>
+</body>
+</html>
