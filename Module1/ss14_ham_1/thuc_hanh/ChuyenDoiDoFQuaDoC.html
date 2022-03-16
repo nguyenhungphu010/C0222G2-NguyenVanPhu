@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen Doi do F qua Do C</title>
+</head>
+
+<body>
+<form>
+    <h2>Temperature Converter</h2>
+    <p> Type the value in the fahrenheit field to convert the value to Celcius</p>
+    <p>Fahrenhiet</p> <input type="number" id ="fahr" oninput="Converter(this.value)" onchange="Converter(this.value)">
+    <p>Celsius:<span id="Celc"></span></p>
+</form>
+<script>
+    function Converter(c) {
+        c = parseFloat(c);
+        document.getElementById("Celc").innerHTML = (c-32) / 1.8;
+    }
+    // console.log(Converter(10))
+    // let fahren = Number(document.getElementById("fahr"));
+    // let anSwer = Converter ();
+    // document.getElementById("Celc").innerHTML = anSwer;
+</script>
+</body>
+</html>
