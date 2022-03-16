@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("nhap so tu nhien"));
+    let b = a.toString();
+    let arr = [b[0]];
+    for (let i = 0; i < b.length; i++){
+        if (b[i]%2===0 && b[i+1]%2===0){
+            arr.push("-",b[i+1])
+        }else{
+            arr.push(b[i+1])
+        }
+
+    }console.log(arr.join(''));
+
+
+
+</script>
+</body>
+</html>

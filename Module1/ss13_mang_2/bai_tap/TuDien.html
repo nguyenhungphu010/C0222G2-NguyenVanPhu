@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Dictionary</title>
+</head>
+
+<body>
+<h1>TỪ ĐIỂN ĐƠN GIẢN</h1>
+<p>Từ Tiếng Anh</p> <input type="text" id="eng" style="width: 20%">
+<p>Nghĩa Tiếng Việt</p> <input type="text" id="vn" style="width: 20%">
+<button onclick="abc()">Dich</button>
+<script>
+    let a = ["legion","traumatic","smuggler","syndicate","cunning","condemn"];
+    let b = [ "quân đoàn","đau buồn","kẻ buôn lậu","Công đoàn","xảo trá/láu cá","Kết án/Lên án" ];
+    let x = document.getElementById("eng").value;
+// document.write(b[Number(a.indexOf(x))])
+//     console.log(x)
+function abc() {
+    let index = 0;
+    let confirm = false;
+    let x = document.getElementById("eng").value;
+    for (let i = 0; i < a.length; i++) {
+        let index = 0;
+        if (a[i] === x) {
+            index = i ;
+            document.getElementById("vn").value = b[index];
+            confirm = true;
+            break;
+        }
+    }
+    if(confirm === false ){
+        document.getElementById("vn").value = "khong tim thay"
+    }
+    }
+
+    // document.write(x);
+</script>
+</body>
+</html>

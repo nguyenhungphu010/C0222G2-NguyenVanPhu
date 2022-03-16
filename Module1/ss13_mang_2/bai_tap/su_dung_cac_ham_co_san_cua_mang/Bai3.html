@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<script>
+    let a = "The Quick Brown Fox";
+    let b = a.split(" ")
+    document.write(b+"<br>");
+    document.write(typeof (b));
+    let c = "";
+    for (let i =0; i<b.length; i++){
+        c+= " "
+        for (let j = 0; j <b[i].length; j++){
+            if(j===0){
+               c+=b[i][j].toLowerCase() ;
+            }else {
+                c+= b[i][j].toUpperCase() ;
+            }
+        }
+    } console.log(c)
+
+
+</script>
+</body>
+</html>

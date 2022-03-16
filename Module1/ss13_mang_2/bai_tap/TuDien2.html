@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu Dien</title>
+</head>
+<h1>TỪ ĐIỂN ĐƠN GIẢN</h1>
+<p>Từ Tiếng Anh</p> <input type="text" id="eng" style="width: 20%">
+<p>Nghĩa Tiếng Việt</p> <input type="text" id="vn" style="width: 20%">
+<button onclick="abcd()">Dich</button>
+<body>
+<script>
+    let a = ["legion","traumatic","smuggler","syndicate","cunning","condemn"];
+    let b = [ "quân đoàn","đau buồn","kẻ buôn lậu","Công đoàn","xảo trá/láu cá","Kết án/Lên án" ];
+    function abcd() {
+        let text = document.getElementById("eng").value;
+        let index = a.indexOf(text);
+        if(a.includes(text)){
+            document.getElementById("vn").value = b[index];
+        }else {
+            document.getElementById("vn").value = "khong tim thay";
+        }console.log(text);
+        console.log(typeof (index))
+    }
+</script>
+
+</body>
+</html>
