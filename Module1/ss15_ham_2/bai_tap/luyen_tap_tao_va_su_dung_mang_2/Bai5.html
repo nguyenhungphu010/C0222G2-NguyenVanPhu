@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body onload="checkSmall()">
+<script>
+    function checkSmall() {
+    let a = Number(prompt("nhapso a"))
+    let b = Number(prompt("nhapso b"))
+    let c = Number(prompt("nhapso c"))
+        let d =[a,b,c];
+        let max = d[0];
+    for (let i =0; i<d.length; i ++){
+        if(d[i]>max){
+            max = d[i];
+
+        }
+    } document.write("gia tri lon nhat la "+max)
+
+    }
+</script>
+</body>
+</html>
