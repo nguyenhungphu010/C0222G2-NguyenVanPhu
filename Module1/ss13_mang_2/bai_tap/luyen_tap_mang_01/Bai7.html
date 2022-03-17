@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7</title>
+</head>
+<body>
+<script>
+    let a =[2,3,15,3,23,"V",921,54,13,81,3]
+    let b = ["1BHK", 25000, "2BHK", 50000, "Rent", true]
+    function checkAndDeleteV(x) {
+        if (x.includes("V")){
+            let c = x.indexOf("V");
+            console.log(typeof c)
+            x.splice(c,1)
+            x[x.length -1] =0;
+            document.write(x);
+        }
+    }
+    checkAndDeleteV(a)
+</script>
+</body>
+</html>

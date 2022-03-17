@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+<p id="ketQua"></p>
+<script>
+    // tạo mảng 2 chiều
+    let array = new Array(10);
+    for (let i = 0; i < array.length; i++) {
+        array[i] = new Array(10);
+        for (let j = 0; j < array[i].length; j++) {
+            array[i][j] = "";
+        }
+    }
+    let checkPlayer1 =true;
+    // gọi hàm display;
+    display();
+    // Function de dien x va o vao cac o trong.
+    function play(i,j) {
+        if (checkPlayer1&&!checkPlayed(i,j)){
+            array[i][j]="X";
+            checkPlayer1 =false;
+            if (checkWin()){
+                alert("người chơi 1 chiến thắng")
+            }
+        }else if(!checkPlayer1&&!checkPlayed(i,j)){
+            array[i][j]="O";
+            checkPlayer1=true;
+            if (checkWin()){
+                alert("người chơi 2 chiến thắng")
+            }
+        }
+        display();
+    }
+    // Function kiem tra cac o da co nguoi choi chua ?
+    function checkPlayed(i,j) {
+        if (array[i][j]!=""){
+            alert("ô này có người chơi rồi");
+            return true;
+        }
+        return false;
+    }
+    // hàm kiểm tra chiến thắng
+    function checkWin() {
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j]=="X"){
+                    if (array[i][j+1]=="X"&&array[i][j+2]=="X"){
+                        return true;
+                    }
+                    if (array[i+1][j]=="X"&&array[i+2][j]=="X"){
+                        return true;
+                    }
+                    if (array[i+1][j+1]=="X"&&array[i+2][j+2]=="X"){
+                        return true;
+                    }
+                    if (array[i+1][j-1]=="X"&&array[i+2][j-2]=="X"){
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+    // tạo bảng
+    function display(){
+        let tableString = '<table border="1">';
+        for (let i = 0; i < 10; i++) {
+            tableString += '<tr>';
+            for (let j = 0; j < 10; j++) {
+                tableString += '<td  onclick="play('+i+','+j+')" style="height: 30px;width: 30px">' + array[i][j] + '</td>';
+            }
+            tableString += '</tr>';
+        }
+
+        tableString += '</table>';
+
+        document.getElementById("ketQua").innerHTML = tableString;
+    }
+
+</script>
+</body>
+</html>

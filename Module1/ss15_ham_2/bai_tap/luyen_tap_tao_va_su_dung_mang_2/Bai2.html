@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+<p>Nhập bán kính</p>
+<input type="number" id="input">
+<p>kết quả </p>
+<input type="number" id="output">
+<button type="button" onclick="dienTich()">Tinh Dien Tich</button>
+<button type="button" onclick="chuvi()">Tinh Chi Vi</button>
+<script>
+    function dienTich() {
+        let r = document.getElementById("input").value;
+        let s = 3.14 *r*r;
+        document.getElementById("output").value = s;
+    }
+    function chuvi() {
+        let r = document.getElementById("input").value;
+        let c = 3.14 *r*2;
+        document.getElementById("output").value = c;
+    }
+</script>
+</body>
+</html>

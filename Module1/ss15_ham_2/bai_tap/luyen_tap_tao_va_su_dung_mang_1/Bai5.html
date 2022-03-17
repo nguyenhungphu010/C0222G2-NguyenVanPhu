@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body onload="checkStar()">
+<script>
+    let str1 = "Polaris Aldebaran Deneb Vega Altair Dubhe Regulus";
+    let str2 = "Ursa,Minor,Tarurus,Cygnus,Lyra, Aquila,Ursa,Major,Leo";
+    let star1= str1.split(" ");
+    let star2= str2.split(",");
+console.log(star1)
+console.log(star2)
+    function checkStar() {
+        let a = prompt("nhap ten ngoi sao ban muon tim: ")
+        let b = 0;
+        if(star1.includes(a)){
+            b = star1.indexOf(a);
+            console.log(b)
+            document.write("vi tri ngoi sao" +b+"<br>");
+            document.write(star2[b]);
+        }else{
+            alert("khong tim thay ngoi sao nao")
+        }
+    }
+</script>
+</body>
+</html>

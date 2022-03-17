@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check the Prime Number</title>
+</head>
+<body>
+<script>
+    // tim n so nguyen to
+    function isPrime (x) {
+        let n=1;
+        let a = 2;
+        while (n<=x) {
+            let confirm = true;
+            a++;
+            for (let i = 2; i < a; i++) {
+                if (a % i === 0) {
+                    confirm = false;
+                    break;
+                }
+            }
+            if (confirm === true){
+                document.write(a+ ' ');
+                n++;
+            }
+        }
+    }
+    isPrime(1000)
+</script>
+</body>
+</html>

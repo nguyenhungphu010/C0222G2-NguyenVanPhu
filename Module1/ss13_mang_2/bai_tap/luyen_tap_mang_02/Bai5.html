@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 4</title>
+</head>
+<body>
+<script>
+    let arr1 =[2,3,15,3,23,"V",921,54,13,81,3]
+    let arr3 =[2,3,15,3,23,"V",921,54,13,81,3]
+    let arr2 = ["1BHK", 25000, "2BHK", 50000, "Rent", true]
+    let flag = true;
+    function check2Array(a,b) {
+        if (a.length === b.length) {
+            for (let i = 0; i < a.length; i++) {
+                if (a[i] === b[i]) {
+                    flag = true;
+                } else {
+                    flag = false;
+                }
+            }
+        }else {
+            flag = false;
+        }
+        if (flag === true){
+            document.write("hai chuoi giong nhau ")
+        } else {
+            document.write("hai chuoi khong giong nhau ")
+        }
+    }
+
+    check2Array(arr1,arr3)
+
+</script>
+</body>
+</html>
