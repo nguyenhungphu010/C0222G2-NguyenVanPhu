@@ -3,39 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <title>Quan Ly San Pham</title>
+    <style>
+        table {
+            border-collapse: collapse;
+
+        }
+
+        th, td {
+            border: solid 1px black;
+            padding: 4px;
+        }
+
+        th {
+            background-color: gray;
+            color: white;
+        }
+    </style>
 </head>
 <body onload="displayTable()">
-<h3>Add New Product</h3>
+<h2>Add New Product</h2>
 <input type="text" style="width: 20%" id="input" placeholder="New Product">
 <button type="button" onclick="addProduct()" style="color: forestgreen">ADD</button>
+<p id="total"></p>
 <p>Display all the product</p>
 <p id="tableproduct"></p>
 <script>
-// tao bang danh sach san pham
-let array = new Array(5);
-for (let i = 0; i < array.length; i++) {
-    array[i] = new Array(5);
-    for (let j = 0; j < array[i].length; j++) {
-        array[i][j] = "";
-    }
-}
-// mang thong tin san pham
-let arrproduct = ["Nokia","Samsung","LG","Sony"];
+    // tao bang danh sach san pham
 
-// function hien thi san pham len bang
+    let arrproduct = ["Nokia", "Samsung", "LG", "Sony"];
+
+    //  Function Add product vao danh sach san phan
+
+    function addProduct() {
+        let a = document.getElementById("input").value;
+        if (a !== "") {
+            arrproduct.push(a);
+        }
+        displayTable(arrproduct);
+        document.getElementById("input").value = '';
+    }
+
+    // Function Edit
+    function editProduct(x) {
+        let oldProduct = arrproduct[x];
+        arrproduct[x] = prompt(arrproduct[x]);
+        if (arrproduct[x] == "" || arrproduct[x] == null) {
+            arrproduct[x] = oldProduct;
+        }
+        displayTable(arrproduct);
+    }
+
+    // Function Xoa Hang
+    function deleteProduct(x) {
+        if (confirm("ban chac chan muon xoa")) {
+            arrproduct.splice(x, 1)
+        }
+        displayTable(arrproduct)
+    }
+
+    // Function tinh total cac phan tu trong bang
+
+
+    // Function bang  hien thi san pham len bang
     function displayTable() {
-        let tableProduct = '<table border="1">';
+        //  tinh total cac phan tu trong bang
+        document.getElementById("total").innerHTML = "Total Product: " + arrproduct.length;
+        // Build table
+        let tableProduct = '<table style="border: solid 1px">\n' +
+            '    <tr>\n' +
+            '        <th>No</th>\n' +
+            '        <th>Product name</th>\n' +
+            '        <th> Function </th>\n' +
+            '        <th> Function </th>\n' +
+            '    </tr>';
         for (let i = 0; i < arrproduct.length; i++) {
-            tableProduct += '<tr>';
-            tableProduct += '<td style="width: 200px">' + arrproduct[i] + '</td>';
-            tableProduct += '</tr>'
+            tableProduct += '<tr>' +
+                '<td style="text-align: center">' + (i + 1) + '</td>' +
+                '<td style="width: 150px">' + arrproduct[i] + '</td>' +
+                '<td style="text-align: center"><button onclick="editProduct(' + i + ')">edit</button></td>' +
+                '<td style="text-align: center"><button onclick="deleteProduct(' + i + ')">delete</button></td>' +
+                '</tr>'
         }
         tableProduct += '</table>';
-
         document.getElementById("tableproduct").innerHTML = tableProduct;
     }
-
-
 
 </script>
 </body>

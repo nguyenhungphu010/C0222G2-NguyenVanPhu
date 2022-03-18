@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem Tra tu Doi Xung Cach 2</title>
+</head>
+<body>
+<script>
+    let a = "abtba366"
+    let array = a.split("");
+    document.write(array);
+
+    function isPalindrome(b) {
+        let d = b.reverse();
+        document.write(d)
+        let c = b.length
+        document.write(c)
+        for (let i = 0; i < c; i++) {
+            if (d[i] === b[i]) {
+                console.log("test")
+                return true;
+            } else {
+                console.log("test false")
+                return false
+            }
+        }
+    }
+
+    console.log("Kết quả:" + isPalindrome(array));
+</script>
+</body>
+</html>

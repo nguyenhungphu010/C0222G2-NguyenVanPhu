@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem Tra Tu Doi Xung</title>
+</head>
+<body>
+<script>
+    let a = "abtba3"
+    let array = a.split("");
+    document.write(array);
+
+    function isPalindrome(b) {
+        c = b.length;
+        if (c < 2) {
+            return true;
+        } else {
+            if(b[0]=== b[c-1]){
+                b.pop();
+                b.shift();
+                return isPalindrome(b)
+            }else {
+                console.log("test")
+                return false;
+            }
+        }
+    }
+    console.log("Kết quả:" + isPalindrome(array));
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = "abtba366"
+    let array = str.split("");
+    document.write(array);
+
+    function isPalindrome(a) {
+        let b = a.split("")
+        let c  = b.reverse();
+        let d = c.join("");
+        if(a==d){
+            console.log("test")
+            return true;
+        }else {
+            console.log("test false")
+            return false
+        }
+    }
+    console.log("Kết quả:" + isPalindrome(str));
+</script>
+</body>
+</html>
