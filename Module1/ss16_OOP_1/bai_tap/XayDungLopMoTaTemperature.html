@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay Dung Lop Mo Ta TemPerature </title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(celcius) {
+            this.celcius = celcius;
+        }
+
+        getTemp = function() {
+            return this.celcius;
+        }
+
+        convertToF = function() {
+            return (this.celcius) * 1.8 + 32;
+        }
+
+        converToKevin = function() {
+            return this.celcius + 273.15;
+        }
+    }
+
+    function convertTemperature() {
+        let temp = new Temperature(25);
+        document.write(temp.getTemp()+ " do C quy doi qua Fahrenhiet la: " + temp.convertToF()+"<br>") ;
+        document.write(temp.getTemp()+ " do C quy doi qua Kenvin la: " +temp.converToKevin());
+    }
+
+    convertTemperature()
+</script>
+
+</body>
+</html>
