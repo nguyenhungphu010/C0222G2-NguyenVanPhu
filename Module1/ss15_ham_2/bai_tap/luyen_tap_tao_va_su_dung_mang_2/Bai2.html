@@ -12,13 +12,13 @@
 <button type="button" onclick="dienTich()">Tinh Dien Tich</button>
 <button type="button" onclick="chuvi()">Tinh Chi Vi</button>
 <script>
-    function dienTich() {
-        let r = document.getElementById("input").value;
+    function dienTich(r) {
+        r = document.getElementById("input").value;
         let s = 3.14 *r*r;
         document.getElementById("output").value = s;
     }
-    function chuvi() {
-        let r = document.getElementById("input").value;
+    function chuvi(r) {
+        r = document.getElementById("input").value;
         let c = 3.14 *r*2;
         document.getElementById("output").value = c;
     }

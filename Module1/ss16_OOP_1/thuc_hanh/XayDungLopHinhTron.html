@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay Dung Lop Hinh Tron</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius) {
+            this.radius = radius;
+        }
+
+        // phuong thuc tra be ban kinh inh tron
+        getRadius = function () {
+            return this.radius;
+        }
+        //     phuong thuc tinh dien tich hinh tron;
+        getArea = function () {
+            return Math.PI * this.radius * this.radius;
+        }
+    }
+
+    // tao doi tuong circle va tra ve cac gia tri cua ban kinh va dien tich.
+    let circle = new Circle(2);
+    let radius = circle.getRadius();
+    let area = circle.getArea();
+
+    //     the hien ban kinh va dien tich
+    alert("radius: " + radius + "area: " + area);
+
+    // tao doi tuong circle 2
+    let circle2 = new Circle(3);
+    let radius2 = circle2.getRadius();
+    let area2 = circle2.getArea();
+
+    //     the hien ban kinh va dien tich doi tuong circle 2
+    alert("radius: " + radius2 + "area: " + area2);
+
+    // tao doi tuong circle 3
+    let circle3 = new Circle(4);
+    let radius3 = circle3.getRadius();
+    let area3 = circle3.getArea();
+
+    //     the hien ban kinh va dien tich doi tung circle 3
+    alert("radius: " + radius3 + "area: " + area3);
+</script>
+</body>
+</html>

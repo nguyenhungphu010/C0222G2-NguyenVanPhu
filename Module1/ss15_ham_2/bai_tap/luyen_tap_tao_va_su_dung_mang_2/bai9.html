@@ -6,14 +6,25 @@
 </head>
 <body onload="checkArray2()">
 <script>
-    let a = [5,2,4,"-",5,5,"-","-",6,6,"_",2,"/",24,85]
-    let b = prompt("nhap ky tu muon tim kiem")
-    function checkArray2() {
+    // let a = [5,2,4,"-",5,5,"-","-",6,6,"_",2,"/",24,85]
+    // let b = prompt("nhap ky tu muon tim kiem")
+    function checkArray2(x,y) {
+        // tao mang ban dau
+        x = [];
+        let n = Number(prompt("xin nhap do dai chuoi muốn tạo"))
+        for (let i =1; i <=n; i++){
+            let a = prompt("nhap gia tri thu"+i+": ")
+            x.push(a);
+        }
+        document.write(x+"<br>")
+
+        // tao nhap ky tu muon tim kiem
+        y = prompt("nhap ky tu muon tim kiem")
         let flag = true
         let d =[];
-        for(let i = 0; i < a.length; i++){
-            if (b == a[i]){
-                d.push(a[i]);
+        for(let i = 0; i < x.length; i++){
+            if (y == x[i]){
+                d.push(x[i]);
             }else {
                 flag = false
             }
@@ -22,7 +33,7 @@
             document.write(-1)
         }
         document.write(d+"<br>");
-        document.write("so lan xuat hien cua ky tu "+ b + " la " +d.length)
+        document.write("so lan xuat hien cua ky tu "+ y + " la " +d.length)
     }
 </script>
 </body>

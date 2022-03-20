@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funny Circle </title>
+</head>
+<body onload="createRamdomColorCircle(); create2RandomColorCircle()">
+
+<canvas id="myCanvas" width="1368ppx" height="768px" style="border: 1px solid red;"></canvas>
+<script>
+    class Circle {
+        constructor(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+    }
+
+    function createCircle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        let circle = new Circle(200, 200, 80);
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        ctx.fill();
+
+    }
+
+    //    create a circle with random radius;
+    function createRamdomCircle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        let radius = Math.floor(Math.random() * 80)
+        let circle = new Circle(500, 500, radius);
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+
+    //    create a circle with random color;
+    function getRandomHex() {
+        return Math.floor(Math.random() * 255);
+    }
+
+    function getRandomColor() {
+        let red = getRandomHex();
+        let green = getRandomHex();
+        let blue = getRandomHex();
+        return "rgb(" + red + "," + blue + "," + green + ")";
+    }
+
+    function createRamdomColorCircle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        let radius = Math.floor(Math.random() * 80)
+        let color = getRandomColor();
+        let circle = new Circle(600, 300, radius);
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = color;
+        ctx.fill();
+    }
+
+    //      create 2 circle with random x , y
+    function create2RandomColorCircle() {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        let radius = Math.floor(Math.random() * 80)
+        let color = getRandomColor();
+        let x = Math.random()*window.innerWidth;
+        let y = Math.random()*window.innerHeight;
+        let circle = new Circle(x, y, radius);
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = color;
+        ctx.fill();
+    }
+
+    //     create multiple circles
+    function createMultipleCircle() {
+        for (let i = 0; i < 30; i++) {
+            create2RandomColorCircle();
+        }
+    }
+    createMultipleCircle();
+
+</script>
+
+</body>
+</html>
