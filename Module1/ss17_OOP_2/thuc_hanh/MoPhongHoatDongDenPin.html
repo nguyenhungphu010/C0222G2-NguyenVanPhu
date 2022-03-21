@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mo Phong Hoat Dong Den Pin</title>
+</head>
+<body>
+<script>
+    class Battery {
+        constructor(energy) {
+            this.energy = energy;
+        }
+
+        setEnergy(energy) {
+            this.energy = energy;
+        }
+
+        getEnergy() {
+            return this.energy;
+        }
+
+        decreaseEnergy() {
+            if (this.energy > 0) {
+                this.energy--;
+            }
+        }
+    }
+
+    class FlashLamp {
+        constructor() {
+            this.status = true;
+            this.battery = panasonic;
+        }
+
+        setBatterty(battery){
+            this.battery = battery;
+        }
+        getBatteryInfor(){
+            return this.battery.getEnergy();
+        }
+        light(){
+            if(this.status){
+                alert("Lightning")
+            }else{
+                alert("Turn off")
+            }
+        }
+        turnOn(){
+            this.status = true;
+        }
+        turnOff(){
+            this.status = false;
+        }
+    }
+// tuong tac giua batter va flashlight.
+    let panasonic = new Battery();
+    panasonic.setEnergy(20);
+
+    let phillips = new FlashLamp();
+
+    phillips.setBatterty(panasonic)
+
+    document.write("Batter info:"+ phillips.getBatteryInfor()+"<br>")
+    phillips.light();
+
+    document.write("turn on <br>")
+    phillips.turnOn();
+    phillips.light();
+    document.write("Batter info:"+ phillips.getBatteryInfor()+"<br>")
+
+    document.write("turn off <br>")
+    phillips.turnOff()
+    phillips.turnOn();
+
+
+</script>
+</body>
+</html>

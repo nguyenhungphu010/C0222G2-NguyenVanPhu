@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay Dung Lop Mo Ta Dien Thoai</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor() {
+            this.status = true;
+            this.baterry = 100;
+            this.typing = "";
+            this.sentmessage = [];
+            this.inbox = [];
+        }
+        getStatus() {
+            if (this.status) {
+                console.log("the phone is on")
+            } else {
+                console.log("the phone is off")
+            }
+        }
+        onOff() {
+            this.status = !this.status;
+        }
+        chargeBattery() {
+            this.baterry = 100;
+        }
+        typingText(text) {
+            if (this.status && this.baterry > 10) {
+                this.typing = text;
+            } else {
+                console.log("please charge now");
+            }
+            this.baterry--;
+        }
+
+        receiveMessage(message) {
+            this.inbox = message;
+        }
+
+        sendMessage(mobile, message) {
+            this.typingText(message);
+            this.sentmessage.push(this.typing); // dua tin nhan vao vung nho "tin da gui"
+            mobile.receiveMessage(this.typing); // nhan tin nhan tu dien thoai goc
+            this.typing = ""; // gui xong thi xoa tin nhan.
+        }
+
+        displayMessage() {
+            console.log(this.inbox)
+        }
+
+        displaySentMessage() {
+            console.log(this.sentmessage)
+        }
+    }
+
+    let iphone = new Mobile()
+    let samsung = new Mobile()
+    let nokia = new Mobile();
+    nokia.sendMessage(iphone, "xin chao iphone");
+    iphone.displayMessage();
+    nokia.displaySentMessage()
+</script>
+</body>
+</html>
