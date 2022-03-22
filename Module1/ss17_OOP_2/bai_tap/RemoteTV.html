@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote TV 2 </title>
+</head>
+<button type="submit" onclick="upVolume()">Tang Am Luong</button>
+<button onclick="downVolume()">Giam Am Luong</button>
+<p>so nut trên remote</p>
+<div id="idRemote">
+</div>
+
+<p>volume hien tai</p>
+<input type="number" id="volume">
+<p>kenh dang xem</p>
+<input type="text" id="channel">
+<body>
+<script>
+    class Remote {
+        constructor() {
+            this.id = new Array(5);
+            this.tivi = null;
+        }
+
+        connectTivi(tivi) {
+            this.tivi = tivi;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        // kich hoat chuc nang tang am luong tren tv
+        plusVolume() {
+            if (this.tivi < 100) {
+                this.tivi.increseVolume()
+            } else {
+                alert("volume max")
+            }
+        }
+
+        // kich hoat chuc nang giam am luong tren tv
+        minusVolume() {
+            if (this.tivi >= 0) {
+                this.tivi.decreaseVolume();
+            } else {
+                alert("volume min")
+            }
+        }
+
+    }
+
+    class Tivi {
+        constructor(channel, volume, status) {
+            this.channel = new Array(5);
+            this.volume = 50;
+            this.status = status; // dang tat
+        }
+
+        setChannel(channel) {
+            this.channel = channel;
+
+        }
+
+        getChannel() {
+            return this.channel
+        }
+
+        setVolume(volume) {
+            this.volume = volume;
+        }
+
+        getVolume() {
+            return this.volume;
+        }
+
+        increseVolume() {
+            this.setVolume(this.getVolume() + 2);
+        }
+
+        decreaseVolume() {
+            this.setVolume(this.getVolume() - 2);
+        }
+
+    }
+
+    // tao cac doi tuong,
+    let channelList = ["VTV1", "VTV2", "VTV3", "VTV4", "VTV5"]
+    let tiviSony = new Tivi(channelList, 50, true);
+    let remote = new Remote();
+
+    // connnect remote to TV;
+    remote.connectTivi(tiviSony);
+
+    //s
+    for (let i = 0; i < tiviSony.getChannel().length; i++) {
+        tiviSony.getChannel()[i] = channelList[i];
+    }
+
+    function upVolume() {
+        tiviSony.increseVolume()
+        document.getElementById("volume").value = tiviSony.getVolume()
+    }
+
+    function downVolume() {
+        tiviSony.decreaseVolume()
+        document.getElementById("volume").value = tiviSony.getVolume()
+    }
+
+
+    // xay dung cac nut cua remote;
+    let strTable = "";
+    for (let i = 0; i < 5; i++) {
+        strTable += '<button type="submit" onclick="changeChannel(' + i + ')">' + i + '</button>';
+    }
+    document.getElementById("idRemote").innerHTML = strTable;
+
+    // chuc nang thay doi kenh.
+    function changeChannel(x) {
+        document.getElementById("channel").value = tiviSony.getChannel()[x];
+    }
+
+</script>
+</body>
+</html>
