@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem Tra Ky Tu</title>
+</head>
+<body>
+<script>
+    let alphabet= "";
+    for (let i = 9; ++i<36;){
+        alphabet += i.toString(36);
+    }
+    console.log(alphabet);
+    let str = alphabet.split("")
+    console.log(str)
+    str1 = ['o', 'u', 'i', 'a', 'e']
+    str2 = ['O', 'U', 'I', 'A', 'E']
+    function checkCharacter(x) {
+        x = prompt("nhap ky tu muon kiem tra");
+        if(str1.includes(x)){
+            alert("day la nguyen am" )
+        }else if(str2.includes(x.toUpperCase())){
+            alert("day la nguyen am" )
+        } else {
+            alert("day khong phai nguyen am")
+        }
+    }
+    checkCharacter();
+</script>
+</body>
+</html>

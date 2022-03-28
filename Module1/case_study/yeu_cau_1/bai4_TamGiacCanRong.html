@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tam Giac Can Rong</title>
+</head>
+<body>
+<script>
+    function tamGiacCanRong(x) {
+        let a = '*'
+        let b = '&nbsp&nbsp'
+
+        for (let i = 1; i <= x; i ++){
+            document.write("<br>")
+            for(let k = x; k>i; k --){
+                document.write("-")
+            }
+            for(let j=1; j <= i*2 -1; j++){
+                if(i ===1 || i ===x || j ===1 || j === i*2 -1){
+                    document.write(a)
+                }else {
+                    document.write(b)
+                }
+            }
+        }
+
+    }tamGiacCanRong(5)
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dem So Ky tu Khac Nhau 2</title>
+</head>
+<body>
+<script>
+    s = "cabca";
+    let x = s.split("");
+
+    function differentSymbolsNaive(a) {
+        let b = a.split("");
+        let z = []
+        for (let i = 0; i < b.length; i++) {
+            let x = b[i];
+            if(z.includes(x) ===false){
+                z.push(x)
+            }
+        }
+
+        document.write(z+"<br>")
+        // document.write(b)
+        document.write("số kí tự khác nhau là: "+z.length)
+
+
+    }
+
+    differentSymbolsNaive(s)
+</script>
+</body>
+</html>

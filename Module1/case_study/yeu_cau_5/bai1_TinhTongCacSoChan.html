@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Tong Cac So Chan Trong Mang 2 Chieu</title>
+</head>
+<body>
+<script>
+    let m = Number(prompt("nhap so m"));
+    let n = Number(prompt("nhap so luong phan tu cua Mang cha"));
+
+
+     let array= new Array();
+     let evenArray = [];
+
+    function sumEvenNumber() {
+        let x= 0;
+        let y = 0;
+        for (let i = 0; i < m; i++) {
+            array[i] = new Array(n);
+            for (let j = 0; j <n ; j++) {
+                array[i][j] = x++;
+            }
+        }
+        console.log(array)
+        for (let i = 0; i <m ; i++) {
+            for (let j = 0; j <array[i].length ; j++) {
+                if (array[i][j] %2 === 0){
+                    y+=array[i][j];
+                    evenArray.push(array[i][j]);
+                }
+            }
+        }
+        console.log(evenArray)
+        console.log(y)
+
+    }
+    sumEvenNumber()
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>in so ra chu</title>
+</head>
+<body>
+<script>
+    let b =['zero','one','two','three','four','five','six','seven','eight','nine']
+    function convertNumToString(x) {
+        let z = prompt("nhap so tu nhien: ")
+        let zArr = z.toString().split("");
+        let word = [];
+       for(let i =0;i<zArr.length; i++ ){
+           word.push(x[zArr[i]]);
+       }
+       document.write(word.join(" "));
+    }
+    convertNumToString(b);
+</script>
+</body>
+</html>

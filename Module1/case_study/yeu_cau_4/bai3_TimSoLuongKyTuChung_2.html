@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim So Luong Ky Tu Chung </title>
+</head>
+<body>
+<script>
+    let text1 = 'aabccdfsdvf';
+    let text2 = 'adcaasdfsdf';
+    // let s1 = prompt("nhap gia tri chuoi 1");
+    // let s2 = prompt("nhap gia tri chuoi 2");
+    function findQuantityCommonCharacter(x1, x2){
+        let a = x1.split("");
+        let b = x2.split("");
+        let count = 0;
+        for (let i = 0; i <a.length; i++) {
+            let x = a[i];
+            for (let j = 0; j <b.length ; j++) {
+                if(x === b[j]){
+                    count++;
+                    b.splice(j,1);
+                    break;
+                }
+            }
+        }
+        console.log(count);
+    }
+    findQuantityCommonCharacter(text1 , text2 )
+</script>
+</body>
+</html>

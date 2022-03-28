@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuan Hoa Xau ky Tu</title>
+</head>
+<body>
+<script>
+    let str = "tRuong    TaN   HAI "
+
+    function chuanHoaChuoi(x) {
+        let z = x.replace(/\s+/g, ' ').trim().split(" ");
+        let k =[];
+        let f = [];
+        for (let i = 0; i <z.length; i++) {
+            c = z[i].split("");
+            k.push(c);
+            for (let j = 0; j <k[i].length ; j++) {
+                if(j===0){
+                    k[i][j] =k[i][j].toUpperCase();
+                }else{
+                    k[i][j]=k[i][j].toLowerCase();
+                }
+            }
+            let d = k[i].join("");
+            f.push(d)
+        }
+        console.log(z)
+        console.log(k)
+        console.log(f)
+        document.write(f.join(" ").toString())
+    }
+    chuanHoaChuoi(str)
+</script>
+</body>
+</html>

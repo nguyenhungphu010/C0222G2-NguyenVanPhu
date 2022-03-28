@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim Ky Tu Chung</title>
+</head>
+<body>
+<script>
+    let s1 = prompt("nhap gia tri chuoi 1");
+    let s2 = prompt("nhap gia tri chuoi 2");
+
+    function findCommonCharacter(x1, x2) {
+        let a = x1.split("");
+        let b = x2.split("");
+        let z1 = []; // mang nhung gia tri duy nhat trong chuoi x1.
+        let z2 = []; // mang nhung gia tri duy nhat trong chuoi x2.
+        let k = []; // mamg nhung ky tu duy nhat va trung nhau giua 2 chuoi
+        let t1 = []; // so lan xuat hien cua cac ky tu chung trong chuoi 1
+        let t2 = []; // so lan xuat hien cua cac ky tu chung trong chuoi 1
+        let t = [];
+        // console.log(t);
+
+        // tim gia tri duy nhat cua x1;
+        for (let i = 0; i < a.length; i++) {
+            let x = a[i];
+            if (z1.includes(x) === false) {
+                z1.push(x);
+                z1.sort()
+            }
+        }
+        // document.write(z1 + "<br>")
+
+        // tim gia tri duy nhat cua x2;
+        for (let i = 0; i < b.length; i++) {
+            let x = b[i];
+            if (z2.includes(x) === false) {
+                z2.push(x);
+                z2.sort();
+            }
+        }
+        // document.write(z2 + "<br>")
+
+
+// tim gia tri  trung nhau giua 2 chuoi
+        for (let i = 0; i < z1.length; i++) {
+            if (z2.includes(z1[i])) {
+                k.push(z1[i])
+            }
+
+        }
+        document.write("nhung gia tri chung cua 2 chuoi la: " + k + "<br>")
+
+
+        function checkReplicant(x, y) {
+            for (let i = 0; i < x.length; i++) {
+                let countA = 0;
+                let value = x[i]
+                for (let j = 0; j < y.length; j++) {
+                    if (y[j] === value)
+                        countA++;
+                }
+                // document.write("so lan lap cua gia tri " + x[i] + " trong chuoi  la: " + countA + "<br>")
+                t1.push(countA);
+            }
+            // document.write (t1+"<br>")
+        }
+        checkReplicant(k, a)
+
+
+        function checkReplicant2(x, y) {
+            for (let i = 0; i < x.length; i++) {
+                let countA = 0;
+                let value = x[i]
+                for (let j = 0; j < y.length; j++) {
+                    if (y[j] === value)
+                        countA++;
+                }
+                // document.write("so lan lap cua gia tri " + x[i] + " trong chuoi  la: " + countA + "<br>")
+                t2.push(countA);
+            }
+            // document.write (t2+"<br>")
+        }
+        checkReplicant2(k, b)
+
+// tinh so lan lan trung nhau nho nhat
+        for (let i = 0; i <t1.length; i++) {
+            if(t1[i]>=t2[i]){
+                t.push(t2[i])
+            }else{
+                t.push(t1[i])
+            }
+        }
+        console.log(t);
+
+        for (let i = 0; i <t.length ; i++) {
+            document.write("2 chuoi co "+t[i]+ " ky tu "+k[i]+" trung nhau <br>" )
+        }
+
+    }
+    findCommonCharacter(s1, s2)
+</script>
+</body>
+</html>

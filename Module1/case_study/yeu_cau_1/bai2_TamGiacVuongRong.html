@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tam Giac Vuong Rong</title>
+</head>
+<body>
+<script>
+    function triangleEmpty(x) {
+        let a = '*'
+        let b = '&nbsp'
+        for (let i = 1; i <= x; i++) {
+            document.write("<br>")
+            for (let j = 1; j <= i; j++) {
+                if (i === x) {
+                    document.write(a)
+                } else {
+                    if (j === 1 || j === i - 1) {
+                        document.write(a)
+                    } else {
+                        document.write(b)
+                    }
+                }
+            }
+        }
+
+    }
+
+    triangleEmpty(5)
+</script>
+</body>
+</html>

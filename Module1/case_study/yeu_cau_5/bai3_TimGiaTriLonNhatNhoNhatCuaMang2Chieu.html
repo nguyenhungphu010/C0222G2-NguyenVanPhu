@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim Gia Tri Lon Nhat Nho Nhat Cua Mang 2 Chieu</title>
+</head>
+<body>
+<script>
+    function minMaxArray(m,n){
+        // 1. xay dung mang 2 chieu
+        m = Number(prompt("nhap so luong phan tu mang cha"));
+        n = Number(prompt("nhap so luong phan tu mang con"));
+
+        let arr2 = new Array();
+        let arr2Element = [];
+        let x = 0;
+        for (let i = 0; i < m; i++) {
+            arr2[i] = new Array(n);
+            for (let j = 0; j < n; j++) {
+                arr2[i][j] = x++;
+                arr2Element.push(arr2[i][j])
+            }
+        }
+        let max = arr2Element[0]
+        let min = arr2Element[0];
+        for (let i = 0; i <arr2Element.length; i++) {
+
+            let x = arr2Element[i]
+            let y = arr2Element[i];
+            if(x > max){
+                max = x;
+            }else if(y <=min){
+                min =y ;
+            }
+
+        }
+        console.log(max)
+        console.log(min)
+    }minMaxArray(); 
+
+
+
+</script>
+</body>
+</html>

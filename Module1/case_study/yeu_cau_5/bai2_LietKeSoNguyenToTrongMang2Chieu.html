@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liet Ke So Nguyen To Trong Mang 2 Chieu</title>
+</head>
+<body>
+<script>
+
+
+
+
+    function primeInArray(m, n) {
+
+        m = Number(prompt("nhap so luong phan tu mang cha"));
+        n = Number(prompt("nhap so luong phan tu mang con"));
+
+
+
+// 1. xay dung mang 2 chieu
+        let arr2 = new Array();
+        let arr2Element = [];
+        let arrayPrime = [];
+        let x = 0;
+        for (let i = 0; i < m; i++) {
+            arr2[i] = new Array(n);
+            for (let j = 0; j < n; j++) {
+                arr2[i][j] = x++;
+                arr2Element.push(arr2[i][j])
+            }
+        }
+        console.log(arr2Element.length);
+        console.log(arr2);
+
+
+        for (let i = 0; i < arr2Element.length; i++) {
+            let flag = true;
+            let x = arr2Element[i];
+            if (x === 2) {
+                flag = true;
+            } else if (x > 1) {
+                for (let j = 2; j < x; j++) {
+                    if (x % j === 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+            } else {
+                flag = false;
+            }
+            if (flag === true) {
+                arrayPrime.push(x)
+            }
+
+        }
+        console.log(arrayPrime)
+    }
+    primeInArray();
+
+
+</script>
+</body>
+</html>

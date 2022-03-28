@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuong Trinh Nhap Luong Nhan Vien</title>
+</head>
+<body>
+<script>
+    function thuNhapSauThue(x) {
+        x = Number(prompt("nhap luong nhan vien: "))
+        let rate = 0;
+        let outcome = 0;
+        if(x<7){
+            rate = 0.05;
+            tax = rate*x;
+            outcome = x - tax;
+            alert("thue phai dong la: "+tax+" ,thu nhap rong la: "+outcome)
+        }else if(7<=x<=15){
+            rate = 0.1;
+            tax = rate*x;
+            outcome = x - tax;
+            alert("thue phai dong la: "+tax+" ,thu nhap rong la: "+outcome)
+        }else if(x>15) {
+            rate = 0.2;
+            tax = rate * x;
+            outcome = x - tax;
+            alert("thue phai dong la: "+tax+" ,thu nhap rong la: "+outcome)
+        }
+    }
+    thuNhapSauThue();
+</script>
+</body>
+</html>

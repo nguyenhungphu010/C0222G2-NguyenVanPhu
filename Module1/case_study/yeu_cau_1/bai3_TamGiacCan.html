@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tam Giac Can</title>
+</head>
+<body>
+<script>
+    function tamGiacCan(x) {
+        let a = '*'
+        let b = '&nbsp'
+
+        for (let i = 1; i <= x; i ++){
+            document.write("<br>")
+            for(let k = x; k>i; k --){
+                document.write(b)
+            }
+            for(let j=1; j <= i*2 -1; j++){
+                document.write(a)
+            }
+        }
+
+    }tamGiacCan(5)
+</script>
+</body>
+</html>

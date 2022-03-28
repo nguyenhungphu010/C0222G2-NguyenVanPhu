@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            background-color: coral;
+        }
+
+        th, td {
+            border: gray solid 3px;
+            padding: 10px;
+            font-family: Cambria;
+            color: cornsilk;
+        }
+
+        th {
+            font-size: larger;
+
+        }
+    </style>
+</head>
+<body>
+<table align="center">
+    <tr>
+        <th colspan="2"> Menu</th>
+    </tr>
+    <div>
+
+        <tr>
+            <td>
+                <button value="cafe" type="submit" id="cafe" onclick="showProduct(this.id)">1.cafe</button>
+            </td>
+            <td>
+                <button value="Cam vắt" type="submit" id="cam" onclick="showProduct(this.id)">2.Cam vắt</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button value="Nước ép Cà Rốt" type="submit" id="carot" onclick="showProduct(this.id)">3.Nước ép Cà
+                    Rốt
+                </button>
+            </td>
+            <td>
+                <button value="Nước ép cà chua" type="submit" id="tomato" onclick="showProduct(this.id)">4.Nước ép cà
+                    chua
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button value="Nước lọc" type="submit" id="water" onclick="showProduct(this.id)">5.Nước lọc</button>
+            </td>
+            <td>
+                <button value="Nước Dừa" type="submit" id="coconut" onclick="showProduct(this.id)">6.Nước Dừa</button>
+            </td>
+        </tr>
+
+    </div>
+    <div>
+        <form id="productForm">
+            <tr>
+                <td><input type="text" id="chosen">Sản phẩm đã chọn</td>
+                <td><input type="number" id="priceItem">Đơn giá</td>
+            </tr>
+            <tr>
+                <td><input type="number" id="quantity" min="1" max="99" maxlength="2">Số lượng</td>
+                <td><input type="number" id="money">Thành tiền</td>
+            </tr>
+        </form>
+
+    </div>
+
+    <tr>
+        <td>
+            <button onclick="payBill()">Thanh Toán</button>
+        </td>
+        <td>
+            <button type="reset" onclick="reSet()" id="reset">Thoát</button>
+        </td>
+    </tr>
+</table>
+<script>
+    function backgroundImage() {
+        document.body.style.backgroundImage = "url('https://nazola.com/wp-content/uploads/2019/04/coffee-801781_1280.jpg')"
+    }
+
+    backgroundImage()
+
+    let price = 0;
+
+    // function hien san pham da chon.
+    function showProduct(id) {
+        let data = document.getElementById(id).value;
+        document.getElementById("chosen").value = data;
+
+        if (id === "cafe") {
+            price = 15000;
+        } else if (id === "cam") {
+            price = 25000;
+        } else if (id === "carot") {
+            price = 23000;
+        } else if (id === "tomato") {
+            price = 24000;
+        } else if (id === "water") {
+            price = 10000;
+        } else if (id === "coconut") {
+            price = 30000;
+        }
+        document.getElementById("priceItem").value = price;
+    }
+
+    function payBill() {
+
+        let quant = document.getElementById("quantity").value;
+        let total = quant * price;
+        document.getElementById("money").value = total;
+    }
+// reset lại các đôi tượng của Form. ko thể reset các đôi tượng input trong Table
+    function reSet() {
+        document.getElementById("productForm").reset();
+    }
+</script>
+</body>
+</html>

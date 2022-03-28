@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim Phan So Lon Nhat</title>
+</head>
+<body>
+<script>
+    let numerators  = [5, 2, 5];
+    let denominators = [6, 3, 4]; 
+    function maxFraction(x,y) {
+       let c =[]
+        for (let i = 0; i <x.length ; i++) {
+            c.push(x[i]/y[i])
+        }
+        let max  = Math.max(...c)
+        // document.write(max);
+        for (let i = 0; i <x.length ; i++) {
+            if((x[i]/y[i]) === max ){
+                document.write("chi so: "+i)
+            }
+        }
+    }
+    maxFraction(numerators,denominators)
+</script>
+</body>
+</html>
