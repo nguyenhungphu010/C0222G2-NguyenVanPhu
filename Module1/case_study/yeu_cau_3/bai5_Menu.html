@@ -112,13 +112,14 @@
         document.getElementById("priceItem").value = price;
     }
 
-    function payBill() {
 
+    function payBill() {
         let quant = document.getElementById("quantity").value;
         let total = quant * price;
         document.getElementById("money").value = total;
     }
-// reset lại các đôi tượng của Form. ko thể reset các đôi tượng input trong Table
+
+    // reset lại các đôi tượng của Form. ko thể reset các đôi tượng input trong Table
     function reSet() {
         document.getElementById("productForm").reset();
     }

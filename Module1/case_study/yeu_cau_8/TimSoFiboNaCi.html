@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim So Fibonaci trong day so</title>
+</head>
+<body>
+<script>
+    function backgroundImage() {
+        document.body.style.backgroundImage = "url('https://www.itl.cat/pngfile/big/306-3065177_bmw-s1000rr-wallpaper-4k.jpg')"
+    }
+
+    backgroundImage()
+    // tao day so Fibonaci
+    let arrFibo = [0, 1];
+    let arr = [1, 5, 6, 13, 9, 12, 8, 0, 5, 17711];
+
+    function fibonaci(x) {
+        x = 10
+        let n1 = 0;
+        let n2 = 1;
+        let n3;
+        for (let i = 0; i < (x - 2); i++) {
+            n3 = n1 + n2;
+            n1 = n2;
+            n2 = n3;
+            arrFibo.push(n3)
+        }
+        document.write("day so fibonaci voi chieu dai " + x + " la: " + arrFibo + "<br>");
+    }
+
+    fibonaci(10);
+
+    // tim so fibonacy trong 1 mang so cho truoc.
+
+
+    function findFibo(x) {
+        let final = [];
+        for (let i = 0; i < arrFibo.length; i++) {
+            if (x.includes(arrFibo[i])) {
+                final.push(arrFibo[i]);
+            }
+        }
+        document.write("cac so fibonaci trong day so la: " + final)
+    }
+
+    findFibo(arr)
+</script>
+</body>
+</html>

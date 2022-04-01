@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tim gia tri chia het cho 5 tai index chia het chi 3</title>
+</head>
+<body>
+<script>
+    // tao 1 mang do do dai = length va co gia tri = random
+    let arr = [];
+    lenght = 10;
+    max = 100;
+    for (let i=0; i<lenght; i++) {
+        arr.push(Math.round(Math.random() * max))
+    }
+    document.write(arr+"<br>");
+
+    function devidedFive(x) {
+        let a = [];
+        let b = 0;
+        let average = 0;
+        for (let i = 0; i <x.length ; i++) {
+            if(i%3 ==0 && x[i] %5==0 ){
+                a.push(x[i])
+            }
+        }
+        for (let i = 0; i <a.length ; i++) {
+            b +=a[i];
+            average = b/a.length
+        }
+        document.write(a+"<br>")
+        document.write(b+"<br>")
+        document.write(average+"<br>")
+
+    }
+    devidedFive(arr);
+</script>
+</body>
+</html>

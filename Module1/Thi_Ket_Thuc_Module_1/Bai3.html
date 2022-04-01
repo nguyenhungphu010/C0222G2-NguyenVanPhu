@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+    <style>
+        table {
+            border: solid 2px red;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: solid 1px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<input type="text" name="ID" id="id" width="20px" maxlength="5" placeholder="Id Saving Books">
+<input type="text" name="type" id="type" width="20px" maxlength="10" placeholder="Type Saving Books">
+<input type="text" name="name" id="name" width="20px" maxlength="30" placeholder="Name of Customer">
+<input type="number" name="idCard" id="idCard" width="20px" placeholder="ID card Number">
+<input type="date" name="Date" id="date" width="20px" placeholder="Date of Opening ">
+<input type="number" name="amount" id="amount" width="20px" placeholder="Amount of Saving">
+<button type="button" onclick="addBook()">ADD</button>
+<button type="button" onclick="deleteBook(arrBook)">DEL</button>
+<p id="tablebook"><br></p>
+
+<script>
+    //1. tao lop so tiet kiem
+    class savingBook {
+        constructor(id, type, name, idCard, date, amount) {
+            this.id = id;
+            this.type = type;
+            this.name = name
+            this.idCard = idCard;
+            this.date = date;
+            this.amount = amount;
+        }
+
+        setId(id) {
+            this.id = id
+        }
+
+        getId() {
+            return this.id
+        }
+
+        setType(type) {
+            this.type = type;
+        }
+
+        getType() {
+            return this.type
+        }
+
+        setName(name) {
+            this.name = name
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setIdCard(idCard) {
+            this.id = idCard;
+        }
+
+        getIdCard() {
+            return this.idCard
+        }
+
+        setDate(date) {
+            this.id = date;
+        }
+
+        getDate() {
+            return this.date
+        }
+
+        setAmount(amount) {
+            this.id = amount;
+        }
+
+        getAmount() {
+            return this.amount
+        }
+
+
+    }
+
+    // tao doi tuong book
+    let book1 = new savingBook(201, "6 month", "Nguyen Van A", 201662082, "2001-12-06", 20000)
+    let book2 = new savingBook(202, "10 month", "Nguyen Van B", 201662083, "2001-12-05", 23000)
+    let book3 = new savingBook(203, "12 month", "Nguyen Van C", 201662084, "2001-12-07", 25000)
+    let arrBook = [book1, book2, book3]
+
+    // 3. tao ham Display the hien bang
+    function displayBook(x) {
+        let tablebook = "<table>\n" +
+            "<tr>\n" +
+            "        <th>STT</th>\n" +
+            "        <th>ID</th>\n" +
+            "        <th>Type of Saving</th>\n" +
+            "        <th>Name</th>\n" +
+            "        <th>ID Card</th>\n" +
+            "        <th>Date of Opening</th>\n" +
+            "        <th>Amount of Saving</th>\n" +
+            "    </tr>";
+        for (let i = 0; i < x.length; i++) {
+            tablebook += "<tr>\n" +
+                "        <td>" + (i + 1) + "</td>\n" +
+                "        <td>" + x[i].getId() + "</td>\n" +
+                "        <td>" + x[i].getType() + "</td>\n" +
+                "        <td>" + x[i].getName() + "</td>\n" +
+                "        <td>" + x[i].getIdCard() + "</td>\n" +
+                "        <td>" + x[i].getDate() + "</td>\n" +
+                "        <td>" + x[i].getAmount() + "</td>\n" +
+                "    </tr>"
+        }
+        tablebook += "</table>"
+        document.getElementById("tablebook").innerHTML = tablebook
+    } displayBook(arrBook)
+
+    // 4. function add so tiet kiem
+    function addBook() {
+        let x = document.getElementById("id").value;
+        let y = document.getElementById("type").value;
+        let z = document.getElementById("name").value;
+        let k = document.getElementById("idCard").value;
+        let w = document.getElementById("date").value;
+        let l = document.getElementById("amount").value;
+        let newbook = new savingBook(x, y, z, k, w, l);
+        if (x !== "" || y !== "" || z !== "" || k !== "" || w !== "" || l !== "") {
+            arrBook.push(newbook);
+        }
+        document.getElementById("id").value = "";
+        document.getElementById("type").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("idCard").value = "";
+        document.getElementById("date").value = "";
+        document.getElementById("amount").value = "";
+
+        displayBook(arrBook)
+    }
+
+    //5. function xoa so tiet kiem
+    function deleteBook() {
+        let flag = false;
+        let a = confirm("are you sure ? ")
+        if (a) {
+            let c = parseInt(prompt("input the ID of Book to delete:")) ;
+            for (let i = 0; i < arrBook.length; i++) {
+                if (arrBook[i].getId()==c) {
+                    arrBook.splice(i, 1)
+                    displayBook(arrBook);
+                    return;
+                }
+            }
+
+        }else {
+            return
+        }
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tao Lop May Tinh</title>
+    <style>
+        table{
+            border: solid 2px red;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: solid 1px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<input type="text" name="ID" id="id" width="20px" placeholder="Id of Computer">
+<input type="text" name="name" id="name" width="20px" placeholder="Name of Computer">
+<input type="text" name="maker" id="maker" width="20px" placeholder="Maker">
+<input type="text" name="price" id="price" width="20px" placeholder="Price">
+<button type="button" onclick="addComputer()" >ADD</button>
+<p id="tablecomputer"><br></p>
+<button type="button" onclick="sortPrice(arrComputer)">Sort Price </button>
+
+<script>
+    function backgroundImage() {
+        document.body.style.backgroundImage = "url('https://frentubo.it/wp-content/uploads/2018/07/ducati_scrambler_800_abs_fren_tubo-14-1024x683.jpg')"
+    }backgroundImage()
+
+    // tao lop may tinh.
+    class computer{
+        constructor(id,name,maker,price) {
+            this.id = id;
+            this.name = name;
+            this.maker = maker;
+            this.price = price;
+        }
+        setId(id){
+            this.id = id;
+        }
+        getId(){
+            return this.id;
+        }
+        setName(name){
+            this.name = name;
+        }
+        getName(){
+            return this.name;
+        }
+        setMaker(maker){
+            this.maker = maker;
+        }
+        getMaker(){
+            return this.maker;
+        }
+        setPrice(price){
+            this.price = price;
+        }
+        getPrice(){
+            return this.price;
+        }
+    }
+
+    // tao cac doi tuong may tinh
+    let hpProbook = new computer(1,"HP Probook g8","HP", 24000)
+    let macBook = new computer(2,"Macbook Pro","Apple", 34000)
+    let dellInsprise = new computer(3,"Dell Insprise","Dell", 15000)
+
+    let arrComputer = [hpProbook,macBook,dellInsprise];
+
+    // tao function add thong tin may tinh vao mang.
+    function addComputer() {
+        let x = document.getElementById("id").value;
+        let y = document.getElementById("name").value;
+        let z = document.getElementById("maker").value;
+        let k = document.getElementById("price").value;
+        let newcomputer = new computer(x,y,z,k);
+        if(x!=="" || y!=="" ||z!=="" ||k!==""){
+            arrComputer.push(newcomputer);
+        }
+
+        document.getElementById("id").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("maker").value = "";
+        document.getElementById("price").value = "";
+
+        displayComputer(arrComputer)
+    }
+
+    // Function xoa du lieu may tinh
+    function deleteComputer(x) {
+        let a = confirm("are you sure ? ")
+        if(a){
+            arrComputer.splice(x,1)
+        }
+        displayComputer(arrComputer)
+    }
+
+    // function de chinh sua du lieu
+    function editComputer(x) {
+        let newID = prompt("chinh sua ID: ",arrComputer[x].getId())
+        if (newID !== null){
+            arrComputer[x].setId(newID)
+        }
+        let newName = prompt("chinh sua name: ",arrComputer[x].getName())
+        if (newName === ""){
+            return;
+        }else{
+            arrComputer[x].setName(newName)
+        }
+        let newMaker = prompt("chinh sua maker: ",arrComputer[x].getMaker())
+        if (newMaker === ""){
+            return;
+        }else{
+            arrComputer[x].setMaker(newMaker)
+        }
+
+        let newPrice = prompt("chinh sua price: ",arrComputer[x].getPrice())
+        if (newPrice === ""){
+            return;
+
+        }else{
+            arrComputer[x].setPrice(newPrice)
+        }
+        displayComputer(arrComputer)
+    }
+
+    // function de sort lai gia cua may tinh
+
+    function sortPrice(x) {
+        x.sort(function (a,b) {return a.getPrice() - b.getPrice()})
+        displayComputer(arrComputer)
+    }
+
+
+
+    // tao function display bang tren HTML
+    function displayComputer(x) {
+        let tableComputer = "<table>\n" +
+            "    <tr>\n" +
+            "        <th>STT</th>\n" +
+            "        <th>ID</th>\n" +
+            "        <th>Name</th>\n" +
+            "        <th>Maker</th>\n" +
+            "        <th>Price</th>\n" +
+            "        <th>Edit</th>\n" +
+            "        <th>Delete</th>\n" +
+            "    </tr>";
+        for (let i = 0; i <x.length ; i++) {
+            tableComputer += "<tr>\n" +
+                "        <td>"+(i+1)+"</td>\n" +
+                "        <td>"+x[i].getId()+"</td>\n" +
+                "        <td>"+x[i].getName()+"</td>\n" +
+                "        <td>"+x[i].getMaker()+"</td>\n" +
+                "        <td>"+x[i].getPrice()+"</td>\n" +
+                "        <td><button type=\"button\" id=\"edit\" onclick=\"editComputer("+i+")\">Edit</button></td>\n" +
+                "        <td><button type=\"button\" id=\"delete\" onclick=\"deleteComputer("+i+")\">Delete</button></td>\n" +
+                "\n" +
+                "    </tr>"
+        }
+        tableComputer +="</table>; "
+        document.getElementById("tablecomputer").innerHTML = tableComputer;
+    }displayComputer(arrComputer)
+
+</script>
+</body>
+</html>

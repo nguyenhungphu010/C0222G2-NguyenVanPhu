@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2 nhap 2 phan so</title>
+</head>
+<body>
+<script>
+    function checkMath(a, b, c, d) {
+        a = parseInt(prompt("nhap so a: "))
+        b = parseInt(prompt("nhap so b: "))
+        c = parseInt(prompt("nhap so c: "))
+        d = parseInt(prompt("nhap so d: "))
+        if ((a/b)=== (c/d)){
+            alert("phan so" +a+"/"+b+"="+"phan so" +c+"/"+d)
+            return true;
+        }else{
+            return false;
+        }
+    }checkMath ()
+    console.log(checkMath())
+</script>
+</body>
+</html>

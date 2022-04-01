@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quan Ly Xe May OOP</title>
+    <style>
+        table{
+            border-collapse: collapse;
+
+        }
+        th,td{
+            border: solid 1px;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<input type="text" name="ID" id="id" width="20px" placeholder="so Id">
+<input type="text" name="bienso" id="bks" width="20px" placeholder="bien kiem soat">
+<input type="text" name="owner" id="owner" width="20px" placeholder="Owner">
+<input type="text" name="xilanh" id="xilanh" width="20px" placeholder="Dung tich xi lanh">
+<button type="button" onclick="addInfor()" >ADD</button>
+<p id="table"><br></p>
+
+<!--<table>-->
+<!--    <tr>-->
+<!--        <th>STT</th>-->
+<!--        <th>ID</th>-->
+<!--        <th>Bien Kiem Soat</th>-->
+<!--        <th>Chu So Huu</th>-->
+<!--        <th>Xilanh</th>-->
+<!--        <th>Edit</th>-->
+<!--        <th>Xoa</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>1</td>-->
+<!--        <td>1</td>-->
+<!--        <td>1</td>-->
+<!--        <td>Phu</td>-->
+<!--        <td>100</td>-->
+<!--        <td><button type="button" onclick="editInfor()">Edit</button></td>-->
+<!--        <td><button type="button" onclick="deletInfor()">Delete</button></td>-->
+<!--    </tr>-->
+<!--</table>-->
+<script>
+    function backgroundImage() {
+        document.body.style.backgroundImage = "url('https://www.itl.cat/pngfile/big/306-3065177_bmw-s1000rr-wallpaper-4k.jpg')"
+    }backgroundImage()
+
+
+    // cach xay dung chuong trinh.
+    // 1. viet chuong trinh Display de the hien bang.
+    // 2. viet chuong trinh ADD nhap du lieu tu cac o input vao bang.
+    // 3. viet chuong trinh edit du lieu . bang o alert.
+    // 4. viet chuong trinh xoa du lieu tu bang
+    // 5. update cac thay doi tren bang.
+
+    // xay dung Lop Class quan ly xe may
+    class quanLyXeMay{
+        constructor (id,bienSo,owner,xilanh){
+            this.id = id;
+            this.bienSo= bienSo;
+            this.owner = owner;
+            this.xilanh = xilanh;
+        }
+        setId(id){
+            this.id = id;
+        }
+        getId(){
+            return this.id;
+        }
+        setBienSo(bienSo){
+            this.bienSo = bienSo;
+        }
+        getBienSo(){
+            return this.bienSo;
+        }
+        setOwner(owner){
+            this.owner = owner;
+        }
+        getOwner(){
+            return this.owner;
+        }
+        setXilanh(xilanh){
+            this.xilanh = xilanh;
+        }
+        getXilanh(){
+            return this.xilanh;
+        }
+    }
+    // *****************************
+
+    // tao cac doi tuong xe may de bo xung vao danh sach xe may.
+    let cbr1000 = new quanLyXeMay(1,'43K1-0001',"Phu", 999 )
+    let bmwS1000 = new quanLyXeMay(2,"43K1 -0002","Phu2",1000)
+    let ducati899 = new quanLyXeMay(3,"43K1 -0003","phu3",899)
+    // *****************************
+    // tao danh sach cac phuong tien xe mays
+    let listXemay = [cbr1000,bmwS1000,ducati899];
+
+    // tao function add cac doi tuong moi vao danh sach;
+    function addInfor() {
+        let x = document.getElementById("id").value;
+        let y = document.getElementById("bks").value;
+        let z = document.getElementById("owner").value;
+        let k = document.getElementById("xilanh").value;
+
+        let newXe = new quanLyXeMay(x,y,z,k);
+        listXemay.push(newXe);
+        display(listXemay)
+        document.getElementById("id").value = "";
+        document.getElementById("bks").value = "";
+        document.getElementById("owner").value ="";
+        document.getElementById("xilanh").value ="";
+    }
+    // tao function edit cac doi tuong trong bang.
+    function editInfor(x) {
+        let dataId = prompt("nhap id moi");
+        listXemay[x].setId(dataId);
+        let dataBks = prompt("nhap BKS moi");
+        listXemay[x].setBienSo(dataBks);
+        let dataOwner = prompt("nhap BKS moi");
+        listXemay[x].setOwner(dataOwner);
+        let dataXilanh = prompt("nhap BKS moi");
+        listXemay[x].setXilanh(dataXilanh);
+        display(listXemay);
+    }
+    // tao function xao cac doi tuong trong danh sach doi tuong.
+    function deletInfor(x) {
+
+        if(confirm("are you sure?")){
+            listXemay.splice(x,1);
+        }
+        display(listXemay)
+    }
+
+
+    function display(danhsach) {
+        let tableString = "<table>\n" +
+            "    <tr>\n" +
+            "        <th>STT</th>\n" +
+            "        <th>ID</th>\n" +
+            "        <th>Bien Kiem Soat</th>\n" +
+            "        <th>Chu So Huu</th>\n" +
+            "        <th>Xilanh</th>\n" +
+            "        <th>Edit</th>\n" +
+            "        <th>Xoa</th>\n" +
+            "    </tr>\n";
+        for (let i = 0; i < danhsach.length; i++) {
+            tableString += "<tr>\n" +
+                "        <td>"+(i+1)+"</td>\n" +
+                "        <td>"+danhsach[i].getId()+"</td>\n" +
+                "        <td>"+danhsach[i].getBienSo()+"</td>\n" +
+                "        <td>"+danhsach[i].getOwner()+"</td>\n" +
+                "        <td>"+danhsach[i].getXilanh()+"</td>\n" +
+                "        <td><button type=\"button\" onclick=\"editInfor("+i+")\">Edit</button></td>\n" +
+                "        <td><button type=\"button\" onclick=\"deletInfor("+i+")\">Delete</button></td>\n" +
+                "    </tr>"
+        }
+        tableString += "</table>; "
+        document.getElementById("table").innerHTML = tableString;
+    }display(listXemay);
+
+</script>
+</body>
+</html>

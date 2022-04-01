@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhap mang 5</title>
+</head>
+<body>
+<script>
+    // tao mang voi 50 phan tu
+    let arr = [];
+    lenght = 50
+    max = 100
+    for (let i = 0; i < lenght; i++) {
+        arr.push(Math.round(Math.random() * max))
+    }
+    document.write(arr + '<br>');
+
+    // tao mang b voi cac so nguyen to trong mang a.
+    function findingPrime(x) {
+        let arrPrime = [];
+        for (let i = 0; i < x.length; i++) {
+            let confirm = true;
+            for (let j = 2; j < x[i]; j++) {
+                if (x[i] % j === 0) {
+                    confirm = false;
+                    break;
+                }
+            }
+            if (confirm === true) {
+                arrPrime.push(x[i])
+            }
+        }
+        document.write(arrPrime + '<br>');
+    }
+
+    findingPrime(arr)
+
+
+</script>
+</body>
+</html>
