@@ -15,7 +15,6 @@ public class MainTestSquare {
                 System.out.println(x.getArea());
                 x.howToColor();
                 System.out.println(x.howToColor());
-
             }
         }
     }

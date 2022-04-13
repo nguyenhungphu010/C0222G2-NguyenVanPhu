@@ -26,8 +26,9 @@ public class Square extends Shape implements Colorable{
     public double getArea(){
         return this.edge*edge;
     }
+
     @Override
-    public void howToColor() {
-        System.out.println("Color for all sides");
+    public String howToColor() {
+        return "Color on all size";
     }
 }
