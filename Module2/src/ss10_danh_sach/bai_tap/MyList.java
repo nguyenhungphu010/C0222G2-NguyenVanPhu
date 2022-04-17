@@ -77,4 +77,43 @@ public class MyList<E> {
             size ++;
         }
     }
+    // phuong thuc get 1 phan tu tai vi tri I
+    public E get(int index){
+        return (E) elements[index];
+    }
+    // phuong thuc tra ve chi so cua phantu
+    public int indexOf( E element) {
+        int index = -1;
+        for (int i = 0; i < size ; i++) {
+            if(this.elements[i].equals(element)){
+                return i;
+            }
+        }
+        return index;
+    }
+    // phuong thuc kiem tra phan tu co ton tai trong mang hay khong.
+    public boolean containing(E element){
+        return this.indexOf(element) >= 0;
+    }
+    // phuong thuc clone mang
+    public MyList<E> clone(){
+        MyList<E> y = new MyList<>();
+        y.elements = Arrays.copyOf(this.elements,this.size);
+        y.size = this.size;
+        return y;
+    }
+    // phuogn thuc xoa 1 phan tu tai 1 vi tri Index;
+    public E remove (int index){
+        if(index<0){
+            throw new IllegalArgumentException("Error Index: " + index );
+        }
+        E element = (E) elements[index];
+        for (int i = index; i < size -1 ; i++) {
+            elements[i] = elements[i+1];
+        }
+        elements[size-1] = null;
+        size --;
+        return element;
+    }
 }
+
